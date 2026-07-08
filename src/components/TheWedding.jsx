@@ -726,7 +726,7 @@ useEffect(() => {
           title: "Episode 3: Restu Keluarga",
           image: "/ep3.jpg",
           description:
-            "Setelah perjalanan selama dua tahun, Arif Dan Nazah memberanikan diri untuk berkenalan kepada orangtua...",
+            "Setelah perjalanan panjang, Arif Dan Nazah memberanikan diri untuk berkenalan kepada orangtua...",
           badge: "Eps 3",
           badgeColor: "bg-green-600",
         },
