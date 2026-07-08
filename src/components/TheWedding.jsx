@@ -396,7 +396,7 @@ useEffect(() => {
       <span className="bg-red-600 text-white text-xs md:text-sm px-3 py-1 rounded-full font-semibold shadow">
         Coming soon
       </span>
-      <span className="text-sm">•   17 September 2026</span>
+      <span className="text-sm">•   300 September 2026</span>
     </div>
      {/* Kontrol Volume */}
       <div className="absolute top-4 right-4 z-20">
@@ -471,7 +471,7 @@ useEffect(() => {
       </div>
 
       <div className="bg-red-600 text-white w-fit px-4 py-1 rounded-full text-sm font-semibold shadow-md">
-        Coming soon on Wednesday, 16 September 2026
+        Coming soon on Wednesday, 300 September 2026
       </div>
 
       <p className="text-sm md:text-base text-white/80">
