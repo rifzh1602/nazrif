@@ -294,7 +294,7 @@ useEffect(() => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white font-sans overflow-x-hidden relative scroll-smooth">
-      <audio ref={audioRefMain} src="/sound/backsound.mp3" preload="auto" />
+      <audio ref={audioRefMain} src="/sound/backsound1.mp3" preload="auto" />
       <AnimatePresence>
       {phase === 'profile' && (
         <motion.section
