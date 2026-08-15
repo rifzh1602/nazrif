@@ -3,6 +3,8 @@ import { FaPlay, FaVolumeMute, FaVolumeUp, } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabaseClient'; // atau sesuaikan path-nya
 
+
+
 function CopyRekening({ number }) {
   const [copied, setCopied] = useState(false);
 
@@ -50,13 +52,27 @@ export default function WeddingInvitation() {
   // const [bgIndex, setBgIndex] = useState(0);
   // const [hasInteracted, setHasInteracted] = useState(false);
 
+
   
 
+const params = new URLSearchParams(window.location.search);
 
-  const profiles = [
-  { id: 'primary',   name: 'You',      avatar: '/Netflix-avatar.png' },];
-  const [phase, setPhase] = useState('intro'); // intro | profile | main
-  const [selectedProfile, setSelectedProfile] = useState(null);
+const guestFromUrl = params.get('to');
+
+const guestDisplayName = guestFromUrl
+  ? guestFromUrl.replace(/\b\w/g, (char) => char.toUpperCase())
+  : 'You';
+
+const profiles = [
+  {
+    id: 'primary',
+    name: guestDisplayName,
+    avatar: '/Netflix-avatar.png',
+  },
+];
+
+const [phase, setPhase] = useState('intro');
+const [selectedProfile, setSelectedProfile] = useState(null);
 
 // Slideshow effect
 // useEffect(() => {
@@ -70,6 +86,7 @@ export default function WeddingInvitation() {
 //   }
 //   return () => clearInterval(interval);
 // }, [isPlaying]);
+
 
  useEffect(() => {
   if (showIntro && audioRefIntro.current) {
@@ -185,6 +202,7 @@ const handleSubmitWish = async () => {
   const newWish = {
     name: guestName.trim(),
     message: wishInput.trim(),
+    color: '#ffffff',
   };
 
   const { data, error } = await supabase
@@ -195,6 +213,7 @@ const handleSubmitWish = async () => {
   if (error) {
     console.error('❌ Gagal menyimpan ke Supabase:', error.message);
   } else {
+    console.log('✅ Berhasil menyimpan:', data);
     setWishes((prev) => [data[0], ...prev]);
     setWishInput('');
     setGuestName('');
@@ -374,7 +393,7 @@ useEffect(() => {
       <path id="curve" d="M20,90 Q200,0 400,80" fill="transparent" />
         {/* Filter untuk bayangan */}
       <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="black" flood-opacity="0.4"/>
+        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="black" floodOpacity="0.4"/>
       </filter>
     </defs>
     <text
@@ -396,7 +415,7 @@ useEffect(() => {
       <span className="bg-red-600 text-white text-xs md:text-sm px-3 py-1 rounded-full font-semibold shadow">
         Coming soon
       </span>
-      <span className="text-sm">•   300 September 2026</span>
+      <span className="text-sm">•   17 September 2026</span>
     </div>
      {/* Kontrol Volume */}
       <div className="absolute top-4 right-4 z-20">
@@ -471,7 +490,7 @@ useEffect(() => {
       </div>
 
       <div className="bg-red-600 text-white w-fit px-4 py-1 rounded-full text-sm font-semibold shadow-md">
-        Coming soon on Wednesday, 300 September 2026
+        Coming soon on Thursday, 17 September 2026
       </div>
 
       <p className="text-sm md:text-base text-white/80">
@@ -578,7 +597,7 @@ useEffect(() => {
           transition={{ delay: 0.4, duration: 0.8 }}
           viewport={{ once: false }}
         >
-          Putri dari <span className='font-semibold text-yellow-500'>Bapak </span> & <span className='font-semibold text-yellow-500'>Ibu </span>
+          Putri dari <span className='font-semibold text-yellow-500'>Bapak Nana Rohayana </span> & <span className='font-semibold text-yellow-500'>Ibu Siti Khodijah </span>
         </motion.p>
       </motion.div>
 
@@ -611,7 +630,7 @@ useEffect(() => {
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: false }}
         >
-          Putra dari <span className='font-semibold text-yellow-500'>Bapak </span> & <span className='font-semibold text-yellow-500'>Ibu </span>
+          Putra dari <span className='font-semibold text-yellow-500'>Bapak Gunara </span> & <span className='font-semibold text-yellow-500'>Ibu Nenden </span>
         </motion.p>
       </motion.div>
     </div>
@@ -641,8 +660,8 @@ useEffect(() => {
         viewport={{ once: false }}  // Animasi aktif setiap kali digulir
       >
         <iframe
-          title="Rumah Nazah"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14002.852189573101!2d108.14531115100272!3d-7.350985544622704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5438c7f79b2f%3A0xa4d4d9c1561ac9b5!2sHotel%20Dewi%20Asri!5e0!3m2!1sid!2sid!4v1783528871530!5m2!1sid!2sid"
+          title="Rumah Mempelai Wanita"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.9882717260093!2d108.13788157681903!3d-7.355210072371376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f553fc27bf5d5%3A0x64cf2ad099f3702f!2sMASJID%20AL-IHSAN%20KAWUNGLUWUK%20SUKARAME!5e0!3m2!1sid!2sid!4v1786813794262!5m2!1sid!2sid"
           width="100%"
           height="200"
           allowFullScreen=""
@@ -661,11 +680,11 @@ useEffect(() => {
       >
         <h4 className="text-base md:text-lg font-semibold mb-1">Rumah Mempelai Wanita</h4>
         <p className="text-xs md:text-sm text-white/80 mb-3 leading-snug">
-          Kawung Luwuk, <br />
-          Kec. 
+          Kp KawungLuwuk, <br />
+          Kec. Singaparna,  Kabupaten Tasikmalaya 
         </p>
         <a
-          href="https://maps.app.goo.gl/Nd4MGsK52M4WuNY66"
+          href="https://maps.app.goo.gl/XKjXPgyMRUpy4HUE6"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-white text-black px-4 py-1.5 rounded-full text-xs font-medium hover:bg-red-600 hover:text-white transition"
@@ -824,18 +843,16 @@ useEffect(() => {
     <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">
       Top 10 Moment Favorit
     </h3>
-    <h5 className="text-2xl md:text-1xl  mb-10 text-center">
-      Prewedding
-    </h5>
+  
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
       {[
-        // { img: '/AdaApaDengan Cinta.png', badge: 'Eksklusif', badgeColor: 'bg-red-500' },
-        // { img: '/CrashLandingOnYou.png', badge: 'Premium 👑', badgeColor: 'bg-red-500' },
-        // { img: '/DDThe Explorer.png', badge: 'Top 10', badgeColor: 'bg-red-500' },
-        // { img: '/DuaLatarBiru.png', badge: 'Premium 👑', badgeColor: 'bg-red-500' },
-        // { img: '/KeluargaCemara.png', badge: 'Our Favorite', badgeColor: 'bg-red-500' },
-        // { img: '/LaLaLand.png', badge: 'Eksklusif 10', badgeColor: 'bg-red-500' },
+      { img: '/pre1.jpg', badge: 'Eksklusif', badgeColor: 'bg-red-500' },
+      { img: '/pre2.jpg', badge: 'Premium 👑', badgeColor: 'bg-red-500' },
+      { img: '/pre3.jpg', badge: 'Top 10', badgeColor: 'bg-red-500' },
+      { img: '/pre4.jpg', badge: 'Premium 👑', badgeColor: 'bg-red-500' },
+      { img: '/pre5.jpg', badge: 'Our Favorite', badgeColor: 'bg-red-500' },
+      { img: '/pre6.jpg', badge: 'Eksklusif 10', badgeColor: 'bg-red-500' },
         // { img: '/NantiKitaCeritaTentangHariIni.png', badge: 'Top 5', badgeColor: 'bg-red-500' },
         // { img: '/PernikahanDini.png', badge: 'Top 3', badgeColor: 'bg-red-700' },
         // { img: '/ReadyOrNot.png', badge: 'Top 2', badgeColor: 'bg-pink-700' },
@@ -909,9 +926,111 @@ useEffect(() => {
   </motion.div>
 </section>
 
+
+{/* section 9 - Wedding Gift */}
+<section className="text-white py-16 px-6 md:px-20">
+  <motion.div
+    className="max-w-xl mx-auto text-center"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+  >
+    {/* Ikon */}
+    <div className="mx-auto mb-3 w-20 h-20 rounded-full bg-[#2e6f91] flex items-center justify-center shadow-lg">
+      <span className="text-4xl text-white">♡</span>
+    </div>
+
+    <h3 className="text-3xl md:text-4xl font-serif tracking-wide mb-6">
+      — Wedding Gift —
+    </h3>
+
+    <p className="text-base md:text-lg leading-relaxed mb-8">
+      Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
+      Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
+      memberi kado secara cashless.
+    </p>
+
+<div className="rounded-[28px] border border-[#2e6f91] bg-[#1b2330] px-6 py-8 md:px-10 shadow-sm">
+
+      {/* BSI */}
+      <div className="flex flex-col items-center">
+        <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
+          BCA<span className="text-[#f2b63d] text-xl align-top"></span>
+        </div>
+
+        <p className="text-xl font-semibold tracking-wider">
+          3211250109
+        </p>
+        <p className="text-base  mb-3">
+          a/n Nazah Auliana
+        </p>
+
+        <button
+          type="button"
+          onClick={() => navigator.clipboard.writeText("7319374196")}
+          className="w-full max-w-xs bg-[#357da2] hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
+        >
+          📋 SALIN / COPY
+        </button>
+      </div>
+
+      {/* Pemisah */}
+      <div className="flex items-center gap-3 my-7 text-gray-500">
+        <span className="h-px bg-gray-400 flex-1" />
+        <span className="font-serif">Atau</span>
+        <span className="h-px bg-gray-400 flex-1" />
+      </div>
+
+      {/* DANA */}
+      <div className="flex flex-col items-center">
+        <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
+          DANA
+        </div>
+
+        <p className="text-xl font-semibold  tracking-wider mt-5">
+          0895327321531
+        </p>
+        <p className="text-base mb-3">
+          a/n Nazah Auliana
+        </p>
+
+        <button
+          type="button"
+          onClick={() => navigator.clipboard.writeText("081312289665")}
+          className="w-full max-w-xs bg-[#357da2] hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
+        >
+          📋 SALIN / COPY
+        </button>
+      </div>
+
+      {/* Pemisah */}
+      <div className="flex items-center gap-3 my-7 text-gray-500">
+        <span className="h-px bg-gray-400 flex-1" />
+        <span className="font-serif">Atau</span>
+        <span className="h-px bg-gray-400 flex-1" />
+      </div>
+
+      {/* Kirim Kado */}
+      <div className="flex flex-col items-center">
+        <div className="text-5xl mb-3">🎁</div>
+        <h4 className="text-lg font-semibold mb-5">
+QRIS
+        </h4>
+
+        <p className="text-base leading-relaxed text-gray-900">
+
+        </p>
+
+
+      </div>
+    </div>
+  </motion.div>
+</section>
+
 {/* section 10 Form Ucapan & Daftar Wishes */}
 <section className="bg-black px-6 py-10 text-white text-center">
-  {/* <h3 className="text-2xl font-bold mb-6">Wish For The Couple </h3>
+   <h3 className="text-2xl font-bold mb-6">Wish For The Couple </h3>
   <form
     onSubmit={(e) => {
       e.preventDefault();
@@ -942,25 +1061,27 @@ useEffect(() => {
     >
       Kirim Ucapan
     </button>
-  </form> */}
+  </form> 
 
  {/* Recent Wishes */}
 <div className="mt-10 max-w-2xl mx-auto">
-  <div className="max-h-96 overflow-y-scroll pr-2 space-y-4 ">
+  <div className="max-h-96 overflow-y-scroll pr-2 space-y-4">
     {wishes.map((wish, i) => (
       <div
-        key={i}
+        key={wish.id || `wish-${i}`}
         className="bg-gray-800 px-4 py-3 rounded-lg border border-gray-700"
       >
         <p className="text-sm text-gray-300">
           Dari: <span className="font-semibold text-white">{wish.name}</span>
         </p>
-        <p className="mt-1 text-base text-white italic">“{wish.message}”</p>
+
+        <p className="mt-1 text-base text-white italic">
+          “{wish.message}”
+        </p>
       </div>
     ))}
   </div>
 </div>
-
 
 </section>
 
