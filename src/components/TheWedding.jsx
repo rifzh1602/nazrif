@@ -42,6 +42,8 @@ export default function WeddingInvitation() {
   const audioRefIntro = useRef(null); // Audio untuk intro
   const audioRefMain = useRef(null); // Audio untuk musik utama
   const [audioBlocked, setAudioBlocked] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedQRIS, setSelectedQRIS] = useState(null);
   // const [currentPage, setCurrentPage] = useState(1);
   // const wishesPerPage = 5; // Jumlah per halaman
   // const indexOfLastWish = currentPage * wishesPerPage;
@@ -597,7 +599,7 @@ useEffect(() => {
           transition={{ delay: 0.4, duration: 0.8 }}
           viewport={{ once: false }}
         >
-          Putri dari <span className='font-semibold text-yellow-500'>Bapak Nana Rohayana </span> & <span className='font-semibold text-yellow-500'>Ibu Siti Khodijah </span>
+          Putri dari <span className='font-bold '>Bapak Nana Rohayana </span> & <span className='font-bold'>Ibu Siti Khodijah </span>
         </motion.p>
       </motion.div>
 
@@ -630,7 +632,7 @@ useEffect(() => {
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: false }}
         >
-          Putra dari <span className='font-semibold text-yellow-500'>Bapak Gunara </span> & <span className='font-semibold text-yellow-500'>Ibu Nenden </span>
+          Putra dari <span className='font-bold '>Bapak Gunara </span> & <span className='font-bold '>Ibu Nenden </span>
         </motion.p>
       </motion.div>
     </div>
@@ -703,7 +705,7 @@ useEffect(() => {
       viewport={{ once: false }}
     >
       <blockquote className="text-xl md:text-base text-white/80 italic">
-        "Mohon gunakan alas kaki yang nyaman karena acara akan berlangsung di area taman "
+      
       </blockquote>
     </motion.div>
   </motion.div>
@@ -729,7 +731,7 @@ useEffect(() => {
           title: "Episode 1: Pertemuan Pertama",
           image: "/ep1.jpg",
           description:
-            "Ditengah kejenuhan menghadapi rutinitas, Arif dan Nazah dipertemukan dalam situasi dan waktu tak terduga...",
+            "Saling mengisi waktu luang di tengah kesibukan masing - masing, sehingga mulai ada ketertarikan satu sama lain.",
           badge: "Eps 1",
           badgeColor: "bg-red-600",
         },
@@ -737,7 +739,7 @@ useEffect(() => {
           title: "Episode 2: Kencan Pertama",
           image: "/ep2.jpg",
           description:
-            "Setelah proses perkenalan lebih dalam, keberanian Arif Mengajak Nazah berkencan membuahkan hasil manis...",
+            "Untuk waktu yang singkat mereka mulai menjalani hubungan dengan tulus disertai komitmen di dalamnya.",
           badge: "Eps 2",
           badgeColor: "bg-blue-600",
         },
@@ -745,7 +747,7 @@ useEffect(() => {
           title: "Episode 3: Restu Keluarga",
           image: "/ep3.jpg",
           description:
-            "Setelah perjalanan panjang, Arif Dan Nazah memberanikan diri untuk berkenalan kepada orangtua...",
+            "Setelah Keyakinan terhadap hubungan ini semakin kuat, mereka berdua mulai berani meminta izin serta do'a restu orangtua.",
           badge: "Eps 3",
           badgeColor: "bg-green-600",
         },
@@ -753,7 +755,7 @@ useEffect(() => {
           title: "Episode 4: The End of Beginning",
           image: "/ep4.jpg",
           description:
-            "akhirnya kapal mereka mulai berlayar, dipenuhi dengan dukungan dan doa...",
+            "Pada akhirnya, kapal mereka berlayar serta niat baik mulai terlaksana dipenuhi dukungan dan do'a🤍",
           badge: "Eps 4",
           badgeColor: "bg-yellow-600",
         },
@@ -838,25 +840,20 @@ useEffect(() => {
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
-    viewport={{ once: false }} // ✅ Animasi aktif setiap scroll
+    viewport={{ once: false }}
   >
     <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">
       Top 10 Moment Favorit
     </h3>
-  
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
       {[
-      { img: '/pre1.jpg', badge: 'Eksklusif', badgeColor: 'bg-red-500' },
-      { img: '/pre2.jpg', badge: 'Premium 👑', badgeColor: 'bg-red-500' },
-      { img: '/pre3.jpg', badge: 'Top 10', badgeColor: 'bg-red-500' },
-      { img: '/pre4.jpg', badge: 'Premium 👑', badgeColor: 'bg-red-500' },
-      { img: '/pre5.jpg', badge: 'Our Favorite', badgeColor: 'bg-red-500' },
-      { img: '/pre6.jpg', badge: 'Eksklusif 10', badgeColor: 'bg-red-500' },
-        // { img: '/NantiKitaCeritaTentangHariIni.png', badge: 'Top 5', badgeColor: 'bg-red-500' },
-        // { img: '/PernikahanDini.png', badge: 'Top 3', badgeColor: 'bg-red-700' },
-        // { img: '/ReadyOrNot.png', badge: 'Top 2', badgeColor: 'bg-pink-700' },
-        // { img: '/WhenLifeGivesYouTangerines.png', badge: 'Top 1', badgeColor: 'bg-pink-500' },
+        { img: '/pre1.jpg', badge: '', badgeColor: 'bg-red-500' },
+        { img: '/pre2.jpg', badge: '', badgeColor: 'bg-red-500' },
+        { img: '/pre3.jpg', badge: '', badgeColor: 'bg-red-500' },
+        { img: '/pre4.jpg', badge: '', badgeColor: 'bg-red-500' },
+        { img: '/pre5.jpg', badge: '', badgeColor: 'bg-red-500' },
+        { img: '/pre6.jpg', badge: '', badgeColor: 'bg-red-500' },
       ].map((item, idx) => (
         <motion.div
           key={idx}
@@ -864,7 +861,7 @@ useEffect(() => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.07, duration: 0.5 }}
-          viewport={{ once: false }} // ✅ animasi bisa muncul tiap scroll
+          viewport={{ once: false }}
           whileHover={{
             scale: 1.05,
             rotateX: -5,
@@ -872,17 +869,18 @@ useEffect(() => {
             transition: { duration: 0.4, ease: 'easeOut' },
           }}
           style={{ transformStyle: 'preserve-3d' }}
+          onClick={() => setSelectedImage(item.img)}
         >
           <img
             src={item.img}
-            alt={item.title}
+            alt={`Moment ${idx + 1}`}
             className="w-full h-full object-cover aspect-[3/4] transform group-hover:scale-105 transition duration-300 rounded-lg"
           />
 
-          {/* Overlay judul */}
-          <div className="absolute inset-0 flex items-end p-3 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+          {/* Overlay */}
+          <div className="absolute inset-0 flex items-end p-3 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none">
             <h4 className="text-sm font-bold group-hover:text-yellow-400 transition">
-              {item.title}
+
             </h4>
           </div>
 
@@ -899,6 +897,31 @@ useEffect(() => {
         </motion.div>
       ))}
     </div>
+
+    {/* ============================= */}
+    {/* MODAL / FOTO YANG DIPERBESAR */}
+    {/* ============================= */}
+    {selectedImage && (
+      <div
+        className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+        onClick={() => setSelectedImage(null)}
+      >
+        <img
+          src={selectedImage}
+          alt="Preview Moment"
+          className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+
+        {/* Tombol X */}
+        <button
+          onClick={() => setSelectedImage(null)}
+          className="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white text-3xl transition"
+        >
+          ×
+        </button>
+      </div>
+    )}
   </motion.div>
 </section>
 
@@ -937,9 +960,6 @@ useEffect(() => {
     viewport={{ once: true }}
   >
     {/* Ikon */}
-    <div className="mx-auto mb-3 w-20 h-20 rounded-full bg-[#2e6f91] flex items-center justify-center shadow-lg">
-      <span className="text-4xl text-white">♡</span>
-    </div>
 
     <h3 className="text-3xl md:text-4xl font-serif tracking-wide mb-6">
       — Wedding Gift —
@@ -951,12 +971,12 @@ useEffect(() => {
       memberi kado secara cashless.
     </p>
 
-<div className="rounded-[28px] border border-[#2e6f91] bg-[#1b2330] px-6 py-8 md:px-10 shadow-sm">
+<div className="rounded-[28px] border border-[#] bg-[#1b2330] px-6 py-8 md:px-10 shadow-sm">
 
       {/* BSI */}
       <div className="flex flex-col items-center">
         <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
-          BCA<span className="text-[#f2b63d] text-xl align-top"></span>
+          BCA<span className="text-[#f2b63d] text-xl align-top mb-4"></span>
         </div>
 
         <p className="text-xl font-semibold tracking-wider">
@@ -968,8 +988,8 @@ useEffect(() => {
 
         <button
           type="button"
-          onClick={() => navigator.clipboard.writeText("7319374196")}
-          className="w-full max-w-xs bg-[#357da2] hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
+          onClick={() => navigator.clipboard.writeText("3211250109")}
+          className="w-full max-w-xs bg-red-700 hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
         >
           📋 SALIN / COPY
         </button>
@@ -984,7 +1004,7 @@ useEffect(() => {
 
       {/* DANA */}
       <div className="flex flex-col items-center">
-        <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
+        <div className="text-3xl font-extrabold tracking-widest text-[#168df5] ">
           DANA
         </div>
 
@@ -998,7 +1018,7 @@ useEffect(() => {
         <button
           type="button"
           onClick={() => navigator.clipboard.writeText("081312289665")}
-          className="w-full max-w-xs bg-[#357da2] hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
+          className="w-full max-w-xs bg-red-700 hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
         >
           📋 SALIN / COPY
         </button>
@@ -1011,17 +1031,52 @@ useEffect(() => {
         <span className="h-px bg-gray-400 flex-1" />
       </div>
 
-      {/* Kirim Kado */}
+      {/* QRIS */}
+         <div className="flex flex-col items-center">
+        <div className="text-3xl font-extrabold tracking-widest text-[#168df5] mb-4">
+          QRIS
+        </div>
+        </div>
+        
       <div className="flex flex-col items-center">
-        <div className="text-5xl mb-3">🎁</div>
-        <h4 className="text-lg font-semibold mb-5">
-QRIS
-        </h4>
+  <img
+    src="/qris.jpeg"
+    alt="QRIS"
+    onClick={() => setSelectedQRIS("/qris.jpeg")}
+    className="w-32 h-32 object-cover rounded-xl mb-3 cursor-pointer hover:scale-105 transition duration-300"
+  />
+    
 
         <p className="text-base leading-relaxed text-gray-900">
 
         </p>
+          <p className="text-xl font-semibold italic  tracking-wider mt-5">
+          " Klik dulu baru ss "
+        </p>
+        
+{/* Modal QRIS */}
+{selectedQRIS && (
+  <div
+    className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+    onClick={() => setSelectedQRIS(null)}
+  >
+    <img
+      src={selectedQRIS}
+      alt="QRIS Preview"
+      className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
+      onClick={(e) => e.stopPropagation()}
+    />
 
+    <button
+      type="button"
+      onClick={() => setSelectedQRIS(null)}
+      className="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white text-3xl transition"
+    >
+      ×
+    </button>
+    
+  </div>
+)}
 
       </div>
     </div>
@@ -1178,6 +1233,7 @@ QRIS
           </motion.div>
         )}
       </AnimatePresence>
+
 
 
 
