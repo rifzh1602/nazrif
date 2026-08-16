@@ -317,45 +317,99 @@ useEffect(() => {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white font-sans overflow-x-hidden relative scroll-smooth">
       <audio ref={audioRefMain} src="/sound/backsound1.mp3" preload="auto" />
       <AnimatePresence>
-      {phase === 'profile' && (
-        <motion.section
-          className="fixed inset-0 bg-black flex flex-col items-center justify-center z-40 px-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+     {phase === 'profile' && (
+  <motion.section
+    className="fixed inset-0 bg-black text-white z-40 overflow-hidden"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    {/* BACKGROUND */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/ep1.jpg')",
+      }}
+    />
+
+    {/* OVERLAY HITAM DI BAGIAN BAWAH */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/95" />
+
+    {/* ISI */}
+    <div className="relative z-10 h-full flex flex-col justify-end">
+
+      {/* INFO */}
+      <div className="text-center mb-8 px-4">
+
+  <p className="text-xs md:text-sm tracking-widest font-semibold uppercase mb-4">
+    WE INVITE YOU TO CELEBRATE
+  </p>
+
+  <h1 className="text-4xl md:text-6xl font-serif italic mb-4">
+    Arif & Nazah
+  </h1>
+
+  <p className="text-xs md:text-sm tracking-[0.2em] font-semibold uppercase mb-8">
+    Thursday, 17 September, 2026
+  </p>
+
+  <p className="text-xl md:text-2xl font-serif italic">
+    Dear
+  </p>
+
+</div>
+
+      {/* PROFILE */}
+      <div className="w-full px-4 pb-10">
+        <div
+          className={
+            profiles.length === 1
+              ? "flex justify-center"
+              : "flex justify-center flex-wrap gap-5 md:gap-8"
+          }
         >
-          <h1 className="text-4xl font-semibold text-white mb-12 text-center">Who's Invited ?</h1>
-          <div className="w-full flex justify-center">
-            <div className={`mb-8 ${
-              profiles.length === 1
-                ? "flex justify-center"
-                : "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8"
-            }`}>
-              {profiles.map((p) => (
-                <button
-                  key={p.id}
-                  onClick={() => {
-                    handleProfileClick(p);
-                    setPhase('main'); // <-- Langsung ke halaman main!
-                  }}
-                  className={`
-                    flex flex-col items-center space-y-2
-                    focus:outline-none transition-transform hover:scale-105
-                  `}
-                >
-                  <img
-                    src={p.avatar}
-                    alt={p.name}
-                    className="w-24 h-24 rounded-md object-cover"
-                  />
-                  <span className="text-xl text-gray-200 font-bold">{p.name}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-      )}
+          {profiles.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => {
+                handleProfileClick(p);
+                setPhase('main');
+              }}
+              className="
+                flex flex-col items-center
+                focus:outline-none
+                transition-transform
+                hover:scale-105
+                active:scale-95
+              "
+            >
+              {/* FOTO PROFILE */}
+              <img
+                src={p.avatar}
+                alt={p.name}
+                className="
+                  w-24 h-24
+                  sm:w-28 sm:h-28
+                  md:w-32 md:h-32
+                  rounded-2xl
+                  object-cover
+                  shadow-2xl
+                "
+              />
+
+              {/* NAMA */}
+              <span className="mt-3 text-sm sm:text-base md:text-lg text-white font-bold max-w-[130px] truncate">
+                {p.name}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </motion.section>
+)}
 
 
 {phase === 'main' && (
@@ -377,9 +431,9 @@ useEffect(() => {
 )}
   {/* Gambar sebagai latar belakang fullscreen */}
   <img
-    src="/rif.jpg" // ← ganti dengan gambar kamu
+    src="/aw.jpeg" // ← ganti dengan gambar kamu
     alt="Poster Prewed"
-    className="absolute inset-0 w-full h-full object-cover object-top z-0"
+    className="absolute inset-0 w-full h-full object-cover object-top z-"
   />
 
   {/* Overlay hitam transparan agar teks tetap terbaca */}
@@ -447,7 +501,7 @@ useEffect(() => {
   {/* Background Parallax */}
   <div
     className="absolute inset-0 bg-fixed bg-center bg-cover z-0"
-    style={{ backgroundImage: "url('/rifback.jpg')" }}
+    style={{ backgroundImage: "url('/awe2.jpg')" }}
   >
     <div className="w-full h-full bg-black/80"></div> {/* Overlay */}
   </div>
@@ -468,7 +522,7 @@ useEffect(() => {
       transition={{ duration: 1, delay: 0.2 }}
     >
       <img
-        src="/rifback.jpg"
+        src="/awe2.jpg"
         alt="Poster"
         className="w-full h-auto object-cover ease-in-out duration-300 hover:scale-105 rounded-lg shadow-lg"
       />
@@ -529,9 +583,9 @@ useEffect(() => {
       transition={{ duration: 0.8 }}
     >
       <img
-        src="/gret.JPG"
+        src="/rifbreaking.jpg"
         alt="Pengumuman"
-        className="w-full h-full object-cover ease-in-out duration-300 hover:scale-105"
+        className="w-full h-full object-cover object-[center_83%] rounded-xl ease-in-out duration-300 hover:scale-105"
       />
     </motion.div>
 
@@ -579,7 +633,7 @@ useEffect(() => {
         viewport={{ once: false }}
       >
         <img
-          src="/naz1.png"
+          src="/nazah.jpg"
           alt="Nazah Auliana"
           className="w-48 h-48 object-cover rounded-xl shadow-lg"
         />
@@ -612,7 +666,7 @@ useEffect(() => {
         viewport={{ once: false }}
       >
         <img
-          src="/rif1.jpg"
+          src="/arif.jpg"
           alt="Arif Hidayat"
           className="w-48 h-48 object-cover rounded-xl shadow-lg"
         />
@@ -648,14 +702,51 @@ useEffect(() => {
     transition={{ duration: 1 }}
     viewport={{ once: false }}  // Animasi aktif saat scroll masuk dan keluar dari tampilan
   >
-    <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">Location 🗺️</h3>
+    {/* TANGGAL & JADWAL */}
+<div className="text-center">
+
+  {/* Tanggal */}
+  <h2 className="text-xl  md:text-4xl font-semibold mb-5">
+    Kamis, 17 September 2026
+  </h2>
+
+  {/* AKAD & RESEPSI */}
+  <div className="grid grid-cols-2 max-w-xl mx-auto">
+
+    {/* AKAD */}
+    <div className="text-center px-4 border-r border-gray-400">
+      <h3 className=" text-lg md:text-xl font-semibold">
+        AKAD NIKAH
+      </h3>
+
+      <p className="mt-4 text-sm md:text-base text-gray-300">
+        🕘 &nbsp;Jam : 08.00 WIB s/d Selesai.
+      </p>
+    </div>
+
+    {/* RESEPSI */}
+    <div className="text-center px-4">
+      <h3 className=" text-lg md:text-xl font-semibold">
+        RESEPSI
+      </h3>
+
+      <p className="mt-4 text-sm md:text-base  text-gray-300">
+        🕘 &nbsp;Jam : 11.00 WIB s/d Selesai.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+    <h3 className="text-2xl md:text-3xl font-bold mb-5 mt-7 text-center">Lokasi 🗺️</h3>
 
     {/* Grid 2 kolom di semua ukuran */}
-    <div className="grid grid-cols-2 gap-4 items-start">
+    <div className="grid grid-cols-2 gap-4 items-start relative left-8">
       
       {/* Map - Animasi Masuk dari Kiri */}
       <motion.div
-        className="rounded-xl overflow-hidden shadow-lg"
+        className="rounded-xl overflow-hidden shadow-lg "
         initial={{ opacity: 0, x: -100 }}  // Mulai dari kiri luar
         whileInView={{ opacity: 1, x: 0 }}  // Bergerak ke posisi normal
         transition={{ duration: 0.8 }}
@@ -722,42 +813,38 @@ useEffect(() => {
     viewport={{ once: false }}
   >
     <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center animate__animated animate__fadeInUp">
-      Our Story Episodes 🎬
+      Love Story 🎬
     </h3>
 
     <div className="space-y-10">
       {[
         {
-          title: "Episode 1: Pertemuan Pertama",
+          title: "Pertemuan Pertama",
           image: "/ep1.jpg",
           description:
             "Saling mengisi waktu luang di tengah kesibukan masing - masing, sehingga mulai ada ketertarikan satu sama lain.",
-          badge: "Eps 1",
-          badgeColor: "bg-red-600",
+         
         },
         {
-          title: "Episode 2: Kencan Pertama",
+          title: "Keseriusan",
           image: "/ep2.jpg",
           description:
             "Untuk waktu yang singkat mereka mulai menjalani hubungan dengan tulus disertai komitmen di dalamnya.",
-          badge: "Eps 2",
-          badgeColor: "bg-blue-600",
+
         },
         {
-          title: "Episode 3: Restu Keluarga",
+          title: "Restu Keluarga",
           image: "/ep3.jpg",
           description:
             "Setelah Keyakinan terhadap hubungan ini semakin kuat, mereka berdua mulai berani meminta izin serta do'a restu orangtua.",
-          badge: "Eps 3",
-          badgeColor: "bg-green-600",
+
         },
         {
-          title: "Episode 4: The End of Beginning",
+          title: "The End of Beginning",
           image: "/ep4.jpg",
           description:
             "Pada akhirnya, kapal mereka berlayar serta niat baik mulai terlaksana dipenuhi dukungan dan do'a🤍",
-          badge: "Eps 4",
-          badgeColor: "bg-yellow-600",
+
         },
       ].map((episode, idx) => (
         <motion.div
@@ -843,7 +930,7 @@ useEffect(() => {
     viewport={{ once: false }}
   >
     <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">
-      Top 10 Moment Favorit
+      Moment Favorit
     </h3>
 
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
