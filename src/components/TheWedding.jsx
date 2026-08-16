@@ -1017,7 +1017,7 @@ useEffect(() => {
 
         <button
           type="button"
-          onClick={() => navigator.clipboard.writeText("081312289665")}
+          onClick={() => navigator.clipboard.writeText("0895327321531")}
           className="w-full max-w-xs bg-red-700 hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
         >
           📋 SALIN / COPY
