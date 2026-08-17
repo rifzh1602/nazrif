@@ -328,96 +328,98 @@ useEffect(() => {
       <AnimatePresence>
      {phase === 'profile' && (
   <motion.section
-    className="fixed inset-0 bg-black text-white z-40 overflow-hidden"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-    {/* BACKGROUND */}
-    <div
-      className="absolute inset-0 bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/awal.jpeg')",
-      }}
-    />
+  className="fixed inset-0 bg-black text-white z-40 overflow-hidden cursor-pointer"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.5 }}
+  onClick={() => setPhase('main')}
+>
+  {/* BACKGROUND */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage: "url('/awal.jpeg')",
+    }}
+  />
 
-    {/* OVERLAY HITAM DI BAGIAN BAWAH */}
-    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/95" />
+  {/* OVERLAY HITAM DI BAGIAN BAWAH */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/95" />
 
-    {/* ISI */}
-    <div className="relative z-10 h-full flex flex-col justify-end">
+  {/* ISI */}
+  <div className="relative z-10 h-full flex flex-col justify-end">
 
-      {/* INFO */}
-      <div className="text-center mb-8 px-4">
+    {/* INFO */}
+    <div className="text-center mb-8 px-4 pointer-events-none">
 
-  <p className="text-xs md:text-sm tracking-widest font-semibold uppercase mb-4">
-    WE INVITE YOU TO CELEBRATE
-  </p>
+      <p className="text-xs md:text-sm tracking-widest font-semibold uppercase mb-4">
+        WE INVITE YOU TO CELEBRATE
+      </p>
 
-  <h1 className="text-4xl md:text-6xl font-serif italic mb-4">
-    Arif & Nazah
-  </h1>
+      <h1 className="text-4xl md:text-6xl font-serif italic mb-4">
+        Arif & Nazah
+      </h1>
 
-  <p className="text-xs md:text-sm tracking-[0.2em] font-semibold uppercase mb-8">
-    Thursday, 17 September, 2026
-  </p>
+      <p className="text-xs md:text-sm tracking-[0.2em] font-semibold uppercase mb-8">
+        Thursday, 17 September, 2026
+      </p>
 
-  <p className="text-xl md:text-2xl font-serif italic">
-    Dear
-  </p>
-
-</div>
-
-      {/* PROFILE */}
-      <div className="w-full px-4 pb-10">
-        <div
-          className={
-            profiles.length === 1
-              ? "flex justify-center"
-              : "flex justify-center flex-wrap gap-5 md:gap-8"
-          }
-        >
-          {profiles.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => {
-                handleProfileClick(p);
-                setPhase('main');
-              }}
-              className="
-                flex flex-col items-center
-                focus:outline-none
-                transition-transform
-                hover:scale-105
-                active:scale-95
-              "
-            >
-              {/* FOTO PROFILE */}
-              <img
-                src={p.avatar}
-                alt={p.name}
-                className="
-                  w-24 h-24
-                  sm:w-28 sm:h-28
-                  md:w-32 md:h-32
-                  rounded-2xl
-                  object-cover
-                  shadow-2xl
-                "
-              />
-
-              {/* NAMA */}
-              <span className="mt-3 text-sm sm:text-base md:text-lg text-white font-bold max-w-[130px] truncate">
-                {p.name}
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
+      <p className="text-xl md:text-2xl font-serif italic">
+        Dear
+      </p>
 
     </div>
-  </motion.section>
+
+    {/* PROFILE */}
+    <div className="w-full px-4 pb-10 pointer-events-none">
+      <div
+        className={
+          profiles.length === 1
+            ? "flex justify-center"
+            : "flex justify-center flex-wrap gap-5 md:gap-8"
+        }
+      >
+        {profiles.map((p) => (
+          <button
+            key={p.id}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleProfileClick(p);
+            }}
+            className="
+              pointer-events-auto
+              flex flex-col items-center
+              focus:outline-none
+              transition-transform
+              hover:scale-105
+              active:scale-95
+            "
+          >
+            {/* FOTO PROFILE */}
+            <img
+              src={p.avatar}
+              alt={p.name}
+              className="
+                w-24 h-24
+                sm:w-28 sm:h-28
+                md:w-32 md:h-32
+                rounded-2xl
+                object-cover
+                shadow-2xl
+              "
+            />
+
+            {/* NAMA */}
+            <span className="mt-3 text-sm sm:text-base md:text-lg text-white font-bold whitespace-nowrap">
+              {p.name}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</motion.section>
 )}
 
 
