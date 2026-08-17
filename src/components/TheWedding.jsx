@@ -611,34 +611,73 @@ useEffect(() => {
   </motion.div>
 </section>
 
-{/* section 4 */}
-<section className="bg-black text-white py-16 px-6 md:px-20">
+{/* SECTION 4 - BRIDE AND GROOM */}
+<section
+  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center overflow-hidden"
+  style={{ backgroundImage: "url('/backbre.jpg')" }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/55"></div>
+
   <motion.div
-    className="max-w-5xl mx-auto"
+    className="relative z-10 max-w-5xl mx-auto"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
-    viewport={{ once: false }} // Animasi tetap terjadi saat digulir tanpa refresh
+    viewport={{ once: false }}
   >
-    <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">Bride and Groom 💐</h3>
 
+    {/* ================= TITLE ================= */}
+    <h3 className="text-3xl md:text-5xl font-serif font-bold text-center">
+      Bride and Groom 💐
+    </h3>
+
+    {/* GARIS LOVE DI BAWAH JUDUL */}
+    <div className="flex items-center justify-center gap-3 mt-4 mb-10">
+      <div className="h-px w-24 md:w-36 bg-[#f6d58a]/80"></div>
+
+      <span className="text-[#f6d58a] text-lg">
+        ❧ ♥ ❧
+      </span>
+
+      <div className="h-px w-24 md:w-36 bg-[#f6d58a]/80"></div>
+    </div>
+
+
+    {/* ================= BRIDE & GROOM ================= */}
     <div className="grid grid-cols-2 gap-6 md:gap-10">
-      
-      {/* Mempelai Wanita - Animasi Masuk dari Kiri */}
+
+      {/* ================= BRIDE ================= */}
       <motion.div
-        className="flex flex-col items-center text-center space-y-3"
-        initial={{ opacity: 0, x: -100 }}  // Mulai dari luar layar kiri
-        whileInView={{ opacity: 1, x: 0 }}  // Masuk ke posisi normal
+        className="flex flex-col items-center text-center"
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.1 }}
         viewport={{ once: false }}
       >
+
+        {/* FOTO */}
         <img
           src="/nazah.jpg"
           alt="Nazah Auliana"
-          className="w-48 h-48 object-cover rounded-xl shadow-lg"
+          className="
+            w-36 h-48
+            md:w-48 md:h-64
+            object-cover
+            rounded-xl
+            shadow-2xl
+            border border-white/60
+          "
         />
+
+        {/* NAMA */}
         <motion.h4
-          className="text-lg md:text-xl font-semibold mt-4"
+          className="
+            text-xl md:text-3xl
+            font-serif
+            font-semibold
+            mt-5
+          "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -646,32 +685,75 @@ useEffect(() => {
         >
           Nazah Auliana
         </motion.h4>
+
+        {/* GARIS LOVE */}
+        <div className="flex items-center justify-center gap-2 mt-3 mb-4">
+          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
+
+          <span className="text-[#f6d58a] text-sm">
+            ❧ ♥ ❧
+          </span>
+
+          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
+        </div>
+
+        {/* ORANG TUA */}
         <motion.p
-          className="text-sm text-white/80"
+          className="
+            text-xs md:text-base
+            text-white/90
+            max-w-xs
+            leading-relaxed
+          "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
           viewport={{ once: false }}
         >
-          Putri dari <span className='font-bold '>Bapak Nana Rohayana </span> & <span className='font-bold'>Ibu Siti Khodijah </span>
+          Putri dari{" "}
+          <span className="font-bold">
+            Bapak Nana Rohayana
+          </span>{" "}
+          &{" "}
+          <span className="font-bold">
+            Ibu Siti Khodijah
+          </span>
         </motion.p>
+
       </motion.div>
 
-      {/* Mempelai Pria - Animasi Masuk dari Kanan */}
+
+      {/* ================= GROOM ================= */}
       <motion.div
-        className="flex flex-col items-center text-center space-y-3"
-        initial={{ opacity: 0, x: 100 }}  // Mulai dari luar layar kanan
-        whileInView={{ opacity: 1, x: 0 }}  // Masuk ke posisi normal
+        className="flex flex-col items-center text-center"
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
         viewport={{ once: false }}
       >
+
+        {/* FOTO */}
         <img
           src="/arif.jpg"
           alt="Arif Hidayat"
-          className="w-48 h-48 object-cover rounded-xl shadow-lg"
+          className="
+            w-36 h-48
+            md:w-48 md:h-64
+            object-cover
+            rounded-xl
+            shadow-2xl
+            border border-white/60
+          "
         />
+
+        {/* NAMA */}
         <motion.h4
-          className="text-lg md:text-xl font-semibold mt-4"
+          className="
+            text-xl md:text-3xl
+            font-serif
+            font-semibold
+            mt-5
+          "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -679,78 +761,167 @@ useEffect(() => {
         >
           Arif Hidayat
         </motion.h4>
+
+        {/* GARIS LOVE */}
+        <div className="flex items-center justify-center gap-2 mt-3 mb-4">
+          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
+
+          <span className="text-[#f6d58a] text-sm">
+            ❧ ♥ ❧
+          </span>
+
+          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
+        </div>
+
+        {/* ORANG TUA */}
         <motion.p
-          className="text-sm text-white/80"
+          className="
+            text-xs md:text-base
+            text-white/90
+            max-w-xs
+            leading-relaxed
+          "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           viewport={{ once: false }}
         >
-          Putra dari <span className='font-bold '>Bapak Gunara </span> & <span className='font-bold '>Ibu Nenden </span>
+          Putra dari{" "}
+          <span className="font-bold">
+            Bapak Gunara
+          </span>{" "}
+          &{" "}
+          <span className="font-bold">
+            Ibu Nenden
+          </span>
         </motion.p>
+
       </motion.div>
+
     </div>
+
   </motion.div>
 </section>
 
-{/* section 5 */}
-<section className="bg-black text-white py-16 px-6 md:px-20">
+{/* SECTION 5 */}
+<section
+  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed"
+  style={{ backgroundImage: "url('/backlokasi.jpg')" }}
+>
+  {/* OVERLAY FOTO */}
+  <div className="absolute inset-0 bg-black/65"></div>
+
+  {/* ISI SECTION */}
   <motion.div
-    className="max-w-4xl mx-auto"
+    className="relative z-10 max-w-4xl mx-auto"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
-    viewport={{ once: false }}  // Animasi aktif saat scroll masuk dan keluar dari tampilan
+    viewport={{ once: false }}
   >
-    {/* TANGGAL & JADWAL */}
-<div className="text-center">
 
-  {/* Tanggal */}
-  <h2 className="text-xl  md:text-4xl font-semibold mb-5">
-    Kamis, 17 September 2026
-  </h2>
+    {/* ================= TANGGAL & JADWAL ================= */}
+    <div className="text-center">
 
-  {/* AKAD & RESEPSI */}
-  <div className="grid grid-cols-2 max-w-xl mx-auto">
-
-    {/* AKAD */}
-    <div className="text-center px-4 border-r border-gray-400">
-      <h3 className=" text-lg md:text-xl font-semibold">
-        AKAD NIKAH
-      </h3>
-
-      <p className="mt-4 text-sm md:text-base text-gray-300">
-        🕘 &nbsp;Jam : 08.00 WIB s/d Selesai.
+      {/* Ornamen kecil */}
+      <p className="text-[#f6d58a] text-xs md:text-sm tracking-[4px] mb-3">
+        SAVE THE DATE
       </p>
+
+      {/* TANGGAL */}
+      <h2 className="text-xl md:text-4xl font-semibold mb-4">
+        Kamis, 17 September 2026
+      </h2>
+
+      {/* GARIS LOVE */}
+      <div className="flex items-center justify-center gap-3 mb-9">
+        <div className="h-px w-16 md:w-28 bg-[#f6d58a]/80"></div>
+
+        <span className="text-[#f6d58a] text-lg">
+          ❧ ♥ ❧
+        </span>
+
+        <div className="h-px w-16 md:w-28 bg-[#f6d58a]/80"></div>
+      </div>
+
+
+      {/* ================= AKAD & RESEPSI ================= */}
+      <div className="grid grid-cols-2 max-w-xl mx-auto">
+
+        {/* AKAD */}
+        <div className="text-center px-4 border-r border-[#f6d58a]/60">
+
+          <h3 className="text-lg md:text-xl font-semibold">
+            AKAD NIKAH
+          </h3>
+
+          <div className="text-[#f6d58a] text-xs mt-2 mb-2">
+            ✦
+          </div>
+
+          <p className="text-sm md:text-base text-white/80 leading-relaxed">
+            🕘 &nbsp;Jam : 08.00 WIB s/d
+            <br />
+            Selesai.
+          </p>
+
+        </div>
+
+
+        {/* RESEPSI */}
+        <div className="text-center px-4">
+
+          <h3 className="text-lg md:text-xl font-semibold">
+            RESEPSI
+          </h3>
+
+          <div className="text-[#f6d58a] text-xs mt-2 mb-2">
+            ✦
+          </div>
+
+          <p className="text-sm md:text-base text-white/80 leading-relaxed">
+            🕘 &nbsp;Jam : 11.00 WIB s/d
+            <br />
+            Selesai.
+          </p>
+
+        </div>
+
+      </div>
     </div>
 
-    {/* RESEPSI */}
-    <div className="text-center px-4">
-      <h3 className=" text-lg md:text-xl font-semibold">
-        RESEPSI
+
+    {/* ================= JUDUL LOKASI ================= */}
+
+    <div className="flex items-center justify-center gap-3 mt-12 mb-7">
+
+      <div className="h-px w-10 md:w-20 bg-[#f6d58a]/70"></div>
+
+      <h3 className="text-2xl md:text-3xl font-bold whitespace-nowrap">
+        Lokasi 🗺️
       </h3>
 
-      <p className="mt-4 text-sm md:text-base  text-gray-300">
-        🕘 &nbsp;Jam : 11.00 WIB s/d Selesai.
-      </p>
+      <div className="h-px w-10 md:w-20 bg-[#f6d58a]/70"></div>
+
     </div>
 
-  </div>
 
-</div>
+    {/* ================= GRID LOKASI ================= */}
+    <div className="grid grid-cols-2 gap-4 md:gap-6 items-center">
 
-    <h3 className="text-2xl md:text-3xl font-bold mb-5 mt-7 text-center">Lokasi 🗺️</h3>
-
-    {/* Grid 2 kolom di semua ukuran */}
-    <div className="grid grid-cols-2 gap-4 items-start relative left-8">
-      
-      {/* Map - Animasi Masuk dari Kiri */}
+      {/* MAP */}
       <motion.div
-        className="rounded-xl overflow-hidden shadow-lg "
-        initial={{ opacity: 0, x: -100 }}  // Mulai dari kiri luar
-        whileInView={{ opacity: 1, x: 0 }}  // Bergerak ke posisi normal
+        className="
+          rounded-xl
+          overflow-hidden
+          shadow-2xl
+          border
+          border-[#f6d58a]/40
+        "
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: false }}  // Animasi aktif setiap kali digulir
+        viewport={{ once: false }}
       >
         <iframe
           title="Rumah Mempelai Wanita"
@@ -759,479 +930,1092 @@ useEffect(() => {
           height="200"
           allowFullScreen=""
           loading="lazy"
-          className="w-full h-full border-0"
+          className="w-full h-[170px] md:h-[200px] border-0"
         ></iframe>
       </motion.div>
 
-      {/* Deskripsi Lokasi - Animasi Masuk dari Kanan */}
+
+      {/* DESKRIPSI LOKASI */}
       <motion.div
         className="text-left"
-        initial={{ opacity: 0, x: 100 }}  // Mulai dari kanan luar
-        whileInView={{ opacity: 1, x: 0 }}  // Bergerak ke posisi normal
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: false }}  // Animasi aktif setiap kali digulir
+        viewport={{ once: false }}
       >
-        <h4 className="text-base md:text-lg font-semibold mb-1">Rumah Mempelai Wanita</h4>
-        <p className="text-xs md:text-sm text-white/80 mb-3 leading-snug">
-          Kp KawungLuwuk, <br />
-          Kec. Singaparna,  Kabupaten Tasikmalaya 
+
+        {/* Ornamen kecil */}
+        <div className="text-[#f6d58a] text-xs mb-2">
+          ✦ ── ❧
+        </div>
+
+        <h4 className="text-base md:text-lg font-semibold mb-2">
+          Rumah Mempelai Wanita
+        </h4>
+
+        <p className="text-xs md:text-sm text-white/80 mb-4 leading-relaxed">
+          Kp KawungLuwuk,
+          <br />
+          Kec. Singaparna,
+          <br />
+          Kabupaten Tasikmalaya
         </p>
+
         <a
           href="https://maps.app.goo.gl/XKjXPgyMRUpy4HUE6"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-black px-4 py-1.5 rounded-full text-xs font-medium hover:bg-red-600 hover:text-white transition"
+          className="
+            inline-block
+            bg-[#f6d58a]
+            text-black
+            px-4
+            py-2
+            rounded-full
+            text-xs
+            font-semibold
+            hover:bg-white
+            transition
+            shadow-lg
+          "
         >
-          Show location
+          📍 Show location
         </a>
+
       </motion.div>
+
     </div>
 
-    {/* Note Section */}
+
+    {/* ================= ORNAMEN BAWAH ================= */}
     <motion.div
-      className="mt-10 text-center"
+      className="flex items-center justify-center gap-3 mt-10"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: false }}
     >
-      <blockquote className="text-xl md:text-base text-white/80 italic">
-      
+
+      <div className="h-px w-16 md:w-28 bg-[#f6d58a]/60"></div>
+
+      <span className="text-[#f6d58a] text-sm md:text-base">
+        ✦ ❧ ♥ ❧ ✦
+      </span>
+
+      <div className="h-px w-16 md:w-28 bg-[#f6d58a]/60"></div>
+
+    </motion.div>
+
+
+    {/* ================= NOTE ================= */}
+    <motion.div
+      className="mt-8 text-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: false }}
+    >
+      <blockquote className="text-sm md:text-base text-white/70 italic">
+        "Semoga langkah kecil ini menjadi awal dari perjalanan panjang
+        yang penuh cinta, doa, dan kebahagiaan." 🤍
       </blockquote>
     </motion.div>
+
   </motion.div>
 </section>
 
+{/* SECTION 6 - LOVE STORY */}
+<section
+  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed"
+  style={{ backgroundImage: "url('/love2.jpg')" }}
+>
 
-{/* section 6 */}
-<section className="bg-black text-white py-16 px-6 md:px-20">
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-black/70"></div>
+
   <motion.div
-    className="max-w-6xl mx-auto"
+    className="relative z-10 max-w-3xl mx-auto"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
+    transition={{ duration: 0.8 }}
     viewport={{ once: false }}
   >
-    <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center animate__animated animate__fadeInUp">
-      Love Story 🎬
-    </h3>
 
-    <div className="space-y-10">
+    {/* JUDUL */}
+    <div className="text-center mb-10">
+
+      <p className="text-[#f6d58a] text-xs tracking-[4px] mb-2">
+        OUR JOURNEY
+      </p>
+
+      <h3 className="text-2xl md:text-3xl font-bold">
+        Love Story 🎬
+      </h3>
+
+      {/* GARIS LOVE */}
+      <div className="flex items-center justify-center gap-3 mt-4">
+
+        <div className="h-px w-14 md:w-24 bg-[#f6d58a]/70"></div>
+
+        <span className="text-[#f6d58a] text-lg">
+          ❧ ♥ ❧
+        </span>
+
+        <div className="h-px w-14 md:w-24 bg-[#f6d58a]/70"></div>
+
+      </div>
+
+    </div>
+
+
+    {/* EPISODE */}
+    <div className="space-y-8">
+
       {[
         {
-          title: "Pertemuan Pertama",
-          image: "/ep1.jpg",
+          title: "Masa-masa",
+          image: "/love1.jpg",
           description:
-            "Saling mengisi waktu luang di tengah kesibukan masing - masing, sehingga mulai ada ketertarikan satu sama lain.",
-         
+            "Di antara kesibukan dan waktu yang terbatas, tanpa disadari tumbuh rasa yang membawa kami semakin dekat satu sama lain.",
         },
         {
           title: "Keseriusan",
-          image: "/ep2.jpg",
+          image: "/love2.jpg",
           description:
-            "Untuk waktu yang singkat mereka mulai menjalani hubungan dengan tulus disertai komitmen di dalamnya.",
-
+            "Dalam waktu yang singkat, hubungan ini mulai dijalani dengan tulus, penuh keyakinan, dan disertai komitmen untuk saling menjaga serta melangkah bersama.",
         },
         {
           title: "Restu Keluarga",
-          image: "/ep3.jpg",
+          image: "/love3.jpg",
           description:
-            "Setelah Keyakinan terhadap hubungan ini semakin kuat, mereka berdua mulai berani meminta izin serta do'a restu orangtua.",
-
+            "Ketika hati telah menemukan keyakinannya, kami memilih melangkah dengan penuh ketulusan, memohon izin dan doa restu kedua orangtua untuk menyatukan dua hati dalam ikatan yang kami harapkan menjadi selamanya.",
         },
         {
           title: "The End of Beginning",
-          image: "/ep4.jpg",
+          image: "/love4.jpg",
           description:
-            "Pada akhirnya, kapal mereka berlayar serta niat baik mulai terlaksana dipenuhi dukungan dan do'a🤍",
-
+            "Pada akhirnya, kapal yang kami nahkodai mulai berlayar menuju tujuan yang sama. Dengan niat yang tulus, langkah ini pun terlaksana dalam balutan dukungan, doa, dan restu dari orang-orang tercinta. Semoga perjalanan ini menjadi awal dari kisah panjang yang kami jalani bersama, selamanya. 🤍",
         },
       ].map((episode, idx) => (
+
         <motion.div
           key={idx}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-br from-zinc-900 to-gray-800 p-4 rounded-2xl shadow-2xl ring-1 ring-white/10 md:bg-transparent md:p-0 md:shadow-none md:ring-0"
-          initial={{ opacity: 0, y: 80 }}
+          className="group"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: idx * 0.2 }}
+          transition={{
+            duration: 0.7,
+            delay: idx * 0.15,
+          }}
           viewport={{ once: false }}
         >
-          {/* Gambar (kiri) */}
-          <motion.div
-            className="w-full rounded-xl overflow-hidden shadow-lg"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: idx * 0.2 }}
-            whileHover={{
-              scale: 1.05,
-              rotateY: 10,
-              rotateX: 10,
-              boxShadow: "0 25px 50px rgba(0,0,0,0.4)",
-              transition: { duration: 0.5 },
+
+          {/* FOTO + JUDUL */}
+          <div className="flex gap-4 items-start">
+
+            {/* FOTO */}
+            <motion.div
+              className="
+                w-[90px] h-[120px]
+                md:w-[110px] md:h-[145px]
+                flex-shrink-0
+                overflow-hidden
+                rounded-lg
+                border border-[#f6d58a]/40
+                bg-black/40
+                shadow-xl
+              "
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={episode.image}
+                alt={episode.title}
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+
+            {/* JUDUL */}
+            <div className="flex-1 min-w-0 pt-1">
+
+              <p className="text-[11px] md:text-xs text-[#f6d58a] mb-1">
+                Episode {idx + 1}:
+              </p>
+
+              <motion.h4
+                className="text-sm md:text-base font-semibold leading-tight"
+                whileHover={{ color: "#f6d58a" }}
+              >
+                {episode.title}
+              </motion.h4>
+
+              <div className="text-[#f6d58a]/70 text-xs mt-3">
+                ── ♥
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* DESKRIPSI */}
+          <motion.p
+            className="
+              text-xs md:text-sm
+              text-white/80
+              leading-relaxed
+              mt-4
+            "
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: idx * 0.15 + 0.2,
             }}
           >
-            <img
-              src={episode.image}
-              alt={episode.title}
-              className="w-full h-full object-cover rounded-lg transition duration-300"
-            />
-          </motion.div>
+            {episode.description}
+          </motion.p>
 
-          {/* Penjelasan Episode (kanan) */}
-          <motion.div
-            className="w-full flex flex-col justify-center"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: idx * 0.2 }}
-            viewport={{ once: false }}
-          >
-            <motion.span
-              className={`inline-block w-fit px-4 py-1 rounded-full text-white text-xs font-bold ${episode.badgeColor} animate-bounce mb-3`}
-              whileHover={{
-                scale: 1.1,
-                rotate: 8,
-                textShadow: "0 0 12px white",
-              }}
-              transition={{ type: "spring", stiffness: 400 }}
-            >
-              {episode.badge}
-            </motion.span>
 
-            <motion.h4
-              className="text-xl font-bold mb-2 text-shadow-md"
-              whileHover={{ scale: 1.03, color: "#facc15" }}
-            >
-              {episode.title}
-            </motion.h4>
+          {/* PEMISAH */}
+          {idx !== 3 && (
+            <div className="flex items-center justify-center gap-3 mt-7">
 
-            <motion.p
-              className="text-base text-white/80 leading-relaxed"
-              whileHover={{
-                scale: 1.02,
-                color: "#f9fafb",
-                textShadow: "0 0 10px rgba(255,255,255,0.5)",
-              }}
-            >
-              {episode.description}
-            </motion.p>
-          </motion.div>
+              <div className="h-px flex-1 bg-[#f6d58a]/30"></div>
+
+              <span className="text-[#f6d58a]/80 text-xs">
+                ❧ ♥ ❧
+              </span>
+
+              <div className="h-px flex-1 bg-[#f6d58a]/30"></div>
+
+            </div>
+          )}
+
         </motion.div>
+
       ))}
+
     </div>
+
+
+    {/* PENUTUP */}
+    <motion.div
+      className="mt-12 text-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: false }}
+    >
+
+      <div className="flex items-center justify-center gap-3 mb-5">
+
+        <div className="h-px w-12 md:w-20 bg-[#f6d58a]/60"></div>
+
+        <span className="text-[#f6d58a]">
+          ✦ ♥ ✦
+        </span>
+
+        <div className="h-px w-12 md:w-20 bg-[#f6d58a]/60"></div>
+
+      </div>
+
+      <p className="text-sm md:text-base text-white/80 italic leading-relaxed">
+        "Bukan tentang bagaimana kita bertemu,
+        <br />
+        tetapi tentang bagaimana kita memilih untuk tetap bersama."
+      </p>
+
+    </motion.div>
+
   </motion.div>
 </section>
 
-{/* section 7 */}
-<section className="text-white py-16 px-6 md:px-20">
+{/* SECTION 7 - MOMENT FAVORIT */}
+<section
+  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed overflow-hidden"
+  style={{ backgroundImage: "url('/love2.jpg')" }}
+>
+  {/* OVERLAY BACKGROUND */}
+  <div className="absolute inset-0 bg-black/65"></div>
+
+  {/* ORNAMEN CAHAYA */}
+  <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+
   <motion.div
-    className="max-w-6xl mx-auto"
+    className="relative z-10 max-w-6xl mx-auto"
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
     viewport={{ once: false }}
   >
-    <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">
-      Moment Favorit
-    </h3>
 
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+    {/* JUDUL */}
+    <div className="text-center mb-10">
+
+      <h3 className="text-2xl md:text-3xl font-bold">
+        Moment Favorit 📸
+      </h3>
+
+      {/* GARIS LOVE */}
+      <div className="flex items-center justify-center gap-3 mt-4">
+        <div className="w-16 md:w-24 h-[1px] bg-yellow-400/70"></div>
+
+        <span className="text-yellow-400 text-lg animate-pulse">
+          ♥
+        </span>
+
+        <div className="w-16 md:w-24 h-[1px] bg-yellow-400/70"></div>
+      </div>
+
+      <p className="text-xs md:text-sm text-white/70 mt-4 italic">
+        "Beberapa momen mungkin sederhana, tetapi selalu memiliki cerita yang istimewa."
+      </p>
+
+    </div>
+
+    {/* GRID FOTO */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+
       {[
-        { img: '/pre1.jpg', badge: '', badgeColor: 'bg-red-500' },
-        { img: '/pre2.jpg', badge: '', badgeColor: 'bg-red-500' },
-        { img: '/pre3.jpg', badge: '', badgeColor: 'bg-red-500' },
-        { img: '/pre4.jpg', badge: '', badgeColor: 'bg-red-500' },
-        { img: '/pre5.jpg', badge: '', badgeColor: 'bg-red-500' },
-        { img: '/pre6.jpg', badge: '', badgeColor: 'bg-red-500' },
+        { img: "/pre1.jpg" },
+        { img: "/pre2.jpg" },
+        { img: "/pre3.jpg" },
+        { img: "/pre4.jpg" },
+        { img: "/pre5.jpg" },
+        { img: "/pre6.jpg" },
       ].map((item, idx) => (
+
         <motion.div
           key={idx}
-          className="relative rounded-xl overflow-hidden shadow-xl group cursor-pointer bg-zinc-900/40 backdrop-blur-md perspective-1000"
+          className="
+            relative
+            rounded-xl
+            overflow-hidden
+            shadow-2xl
+            group
+            cursor-pointer
+            border
+            border-white/20
+            bg-black/30
+            backdrop-blur-sm
+          "
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: idx * 0.07, duration: 0.5 }}
-          viewport={{ once: false }}
-          whileHover={{
-            scale: 1.05,
-            rotateX: -5,
-            rotateY: 8,
-            transition: { duration: 0.4, ease: 'easeOut' },
+          transition={{
+            delay: idx * 0.08,
+            duration: 0.6,
           }}
-          style={{ transformStyle: 'preserve-3d' }}
+          viewport={{ once: false }}
+
+          whileHover={{
+            scale: 1.04,
+            rotateX: -3,
+            rotateY: 5,
+            transition: {
+              duration: 0.35,
+              ease: "easeOut",
+            },
+          }}
+
+          style={{
+            transformStyle: "preserve-3d",
+          }}
+
           onClick={() => setSelectedImage(item.img)}
         >
+
+          {/* FOTO */}
           <img
             src={item.img}
             alt={`Moment ${idx + 1}`}
-            className="w-full h-full object-cover aspect-[3/4] transform group-hover:scale-105 transition duration-300 rounded-lg"
+            className="
+              w-full
+              aspect-[3/4]
+              object-cover
+              transition-all
+              duration-500
+              group-hover:scale-110
+            "
           />
 
-          {/* Overlay */}
-          <div className="absolute inset-0 flex items-end p-3 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none">
-            <h4 className="text-sm font-bold group-hover:text-yellow-400 transition">
+          {/* OVERLAY */}
+          <div
+            className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/70
+              via-transparent
+              to-transparent
+              opacity-70
+              group-hover:opacity-100
+              transition
+            "
+          ></div>
 
-            </h4>
-          </div>
+  
 
-          {/* Badge */}
-          {item.badge && (
-            <motion.div
-              className={`absolute top-2 left-2 px-2 py-1 rounded-full text-xs font-semibold text-white ${item.badgeColor}`}
-              animate={{ y: [0, -2, 0] }}
-              transition={{ repeat: Infinity, duration: 1.2 }}
-            >
-              {item.badge}
-            </motion.div>
-          )}
+          {/* LOVE */}
+          <motion.div
+            className="
+              absolute
+              top-2
+              right-2
+              text-yellow-400
+              text-lg
+              drop-shadow-lg
+            "
+            animate={{
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.5,
+            }}
+          >
+            ♥
+          </motion.div>
+
         </motion.div>
       ))}
     </div>
 
+    {/* KETERANGAN BAWAH */}
+    <motion.div
+      className="text-center mt-10"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: false }}
+    >
+
+      <div className="flex items-center justify-center gap-3 mb-4">
+        <span className="text-yellow-400">✦</span>
+
+        <div className="w-20 h-[1px] bg-yellow-400/50"></div>
+
+        <span className="text-yellow-400 text-xl">
+          ♡
+        </span>
+
+        <div className="w-20 h-[1px] bg-yellow-400/50"></div>
+
+        <span className="text-yellow-400">✦</span>
+      </div>
+
+      <p className="text-xs md:text-sm text-white/70 italic">
+       Setiap cerita menyimpan rasa, dan setiap momen menjadi bagian dari perjalanan cinta kita. 🤍
+      </p>
+
+    </motion.div>
+
+
     {/* ============================= */}
-    {/* MODAL / FOTO YANG DIPERBESAR */}
+    {/* MODAL FOTO */}
     {/* ============================= */}
+
     {selectedImage && (
-      <div
-        className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+      <motion.div
+        className="
+          fixed
+          inset-0
+          z-[9999]
+          bg-black/95
+          flex
+          items-center
+          justify-center
+          p-4
+        "
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         onClick={() => setSelectedImage(null)}
       >
-        <img
+
+        {/* FOTO BESAR */}
+        <motion.img
           src={selectedImage}
           alt="Preview Moment"
-          className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+          className="
+            max-w-full
+            max-h-[90vh]
+            object-contain
+            rounded-xl
+            shadow-2xl
+            border
+            border-white/20
+          "
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.3 }}
           onClick={(e) => e.stopPropagation()}
         />
 
-        {/* Tombol X */}
+        {/* TOMBOL CLOSE */}
         <button
           onClick={() => setSelectedImage(null)}
-          className="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white text-3xl transition"
+          className="
+            absolute
+            top-5
+            right-5
+            w-11
+            h-11
+            rounded-full
+            bg-black/60
+            backdrop-blur-md
+            border
+            border-white/30
+            text-white
+            text-2xl
+            hover:bg-yellow-400
+            hover:text-black
+            transition
+          "
         >
           ×
         </button>
-      </div>
+
+      </motion.div>
     )}
-  </motion.div>
-</section>
 
-{/* section 8 */}
-<section className="bg-black text-white py-16 px-6 md:px-20">
-  <motion.div
-    className="max-w-xl mx-auto text-center"
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-    viewport={{ once: true }}
-  >
-    {/* <h3 className="text-2xl md:text-3xl font-bold mb-6">Daftar Kehadiranmu 💌</h3>
-    <p className="text-sm md:text-base text-white/80 mb-6 leading-relaxed">
-      Kami sangat senang bisa berbagi momen spesial ini bersama kamu.
-      Mohon konfirmasi kehadiranmu melalui link berikut ya! ✨
-    </p>
-
-    <button
-      onClick={() => window.location.href = 'https://theweddingofdinidhito.vercel.app/guest-form'} // Ganti dengan link RSVP kamu
-      className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full shadow transition duration-300"
-    >
-      Konfirmasi Kehadiran
-    </button> */}
   </motion.div>
 </section>
 
 
-{/* section 9 - Wedding Gift */}
-<section className="text-white py-16 px-6 md:px-20">
+{/* SECTION 9 - WEDDING GIFT */}
+<section
+  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed overflow-hidden"
+  style={{ backgroundImage: "url('/love2.jpg')" }}
+>
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-black/70"></div>
+
+  {/* ORNAMEN BACKGROUND */}
+  <div className="absolute top-10 left-5 text-yellow-400/20 text-7xl">
+    ♡
+  </div>
+
+  <div className="absolute top-32 right-5 text-yellow-400/20 text-6xl">
+    ✦
+  </div>
+
+  <div className="absolute bottom-10 left-10 text-yellow-400/20 text-5xl">
+    ✦
+  </div>
+
+  <div className="absolute bottom-20 right-8 text-yellow-400/20 text-7xl">
+    ♡
+  </div>
+
   <motion.div
-    className="max-w-xl mx-auto text-center"
+    className="relative z-10 max-w-xl mx-auto text-center"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
     viewport={{ once: true }}
   >
-    {/* Ikon */}
 
-    <h3 className="text-3xl md:text-4xl font-serif tracking-wide mb-6">
-      — Wedding Gift —
-    </h3>
+    {/* JUDUL */}
+    <div className="mb-7">
 
-    <p className="text-base md:text-lg leading-relaxed mb-8">
+      <h3 className="text-3xl md:text-4xl font-serif tracking-wide">
+        Wedding Gift
+      </h3>
+
+      {/* GARIS LOVE */}
+      <div className="flex items-center justify-center gap-3 mt-4">
+        <div className="w-16 h-px bg-yellow-400/70"></div>
+
+        <span className="text-yellow-400 text-xl animate-pulse">
+          ♥
+        </span>
+
+        <div className="w-16 h-px bg-yellow-400/70"></div>
+      </div>
+
+    </div>
+
+    {/* DESKRIPSI */}
+    <p className="text-sm md:text-base leading-relaxed mb-8 text-white/90">
       Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
       Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
       memberi kado secara cashless.
     </p>
 
-<div className="rounded-[28px] border border-[#] bg-[#1b2330] px-6 py-8 md:px-10 shadow-sm">
+    {/* CARD UTAMA */}
+    <div
+      className="
+        relative
+        rounded-[28px]
+        border
+        border-yellow-400/40
+        bg-[#1b2330]/95
+        px-6
+        py-8
+        md:px-10
+        shadow-2xl
+        backdrop-blur-md
+        overflow-hidden
+      "
+    >
 
-      {/* BSI */}
-      <div className="flex flex-col items-center">
+      {/* ORNAMEN CARD */}
+      <div className="absolute -top-10 -left-10 w-28 h-28 rounded-full bg-yellow-400/10 blur-2xl"></div>
+      <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-pink-400/10 blur-2xl"></div>
+
+      {/* CORNER ORNAMENT */}
+      <div className="absolute top-4 left-4 text-yellow-400/60 text-xl">
+        ✦
+      </div>
+
+      <div className="absolute top-4 right-4 text-yellow-400/60 text-xl">
+        ✦
+      </div>
+
+      {/* ================= BCA ================= */}
+      <div className="relative flex flex-col items-center">
+
         <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
-          BCA<span className="text-[#f2b63d] text-xl align-top mb-4"></span>
+          BCA
         </div>
+
+        <div className="w-12 h-px bg-yellow-400/50 my-2"></div>
 
         <p className="text-xl font-semibold tracking-wider">
           3211250109
         </p>
-        <p className="text-base  mb-3">
+
+        <p className="text-base text-white/80 mb-3">
           a/n Nazah Auliana
         </p>
 
         <button
           type="button"
-          onClick={() => navigator.clipboard.writeText("3211250109")}
-          className="w-full max-w-xs bg-red-700 hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
+          onClick={() =>
+            navigator.clipboard.writeText("3211250109")
+          }
+          className="
+            w-full
+            max-w-xs
+            bg-red-700
+            hover:bg-yellow-500
+            hover:text-black
+            text-white
+            py-2.5
+            rounded-lg
+            font-semibold
+            tracking-widest
+            shadow-lg
+            transition
+            duration-300
+          "
         >
           📋 SALIN / COPY
         </button>
+
       </div>
 
-      {/* Pemisah */}
-      <div className="flex items-center gap-3 my-7 text-gray-500">
-        <span className="h-px bg-gray-400 flex-1" />
-        <span className="font-serif">Atau</span>
-        <span className="h-px bg-gray-400 flex-1" />
+      {/* PEMISAH */}
+      <div className="flex items-center gap-3 my-7 text-gray-400">
+
+        <span className="h-px bg-yellow-400/30 flex-1"></span>
+
+        <span className="font-serif text-yellow-400">
+          ♡ Atau ♡
+        </span>
+
+        <span className="h-px bg-yellow-400/30 flex-1"></span>
+
       </div>
 
-      {/* DANA */}
-      <div className="flex flex-col items-center">
-        <div className="text-3xl font-extrabold tracking-widest text-[#168df5] ">
+      {/* ================= DANA ================= */}
+      <div className="relative flex flex-col items-center">
+
+        <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
           DANA
         </div>
 
-        <p className="text-xl font-semibold  tracking-wider mt-5">
+        <div className="w-12 h-px bg-yellow-400/50 my-2"></div>
+
+        <p className="text-xl font-semibold tracking-wider mt-2">
           0895327321531
         </p>
-        <p className="text-base mb-3">
+
+        <p className="text-base text-white/80 mb-3">
           a/n Nazah Auliana
         </p>
 
         <button
           type="button"
-          onClick={() => navigator.clipboard.writeText("0895327321531")}
-          className="w-full max-w-xs bg-red-700 hover:bg-[#286783] text-white py-2.5 rounded-lg font-semibold tracking-widest shadow-lg transition"
+          onClick={() =>
+            navigator.clipboard.writeText("0895327321531")
+          }
+          className="
+            w-full
+            max-w-xs
+            bg-red-700
+            hover:bg-yellow-500
+            hover:text-black
+            text-white
+            py-2.5
+            rounded-lg
+            font-semibold
+            tracking-widest
+            shadow-lg
+            transition
+            duration-300
+          "
         >
           📋 SALIN / COPY
         </button>
+
       </div>
 
-      {/* Pemisah */}
-      <div className="flex items-center gap-3 my-7 text-gray-500">
-        <span className="h-px bg-gray-400 flex-1" />
-        <span className="font-serif">Atau</span>
-        <span className="h-px bg-gray-400 flex-1" />
+      {/* PEMISAH */}
+      <div className="flex items-center gap-3 my-7 text-gray-400">
+
+        <span className="h-px bg-yellow-400/30 flex-1"></span>
+
+        <span className="font-serif text-yellow-400">
+          ♡ Atau ♡
+        </span>
+
+        <span className="h-px bg-yellow-400/30 flex-1"></span>
+
       </div>
 
-      {/* QRIS */}
-         <div className="flex flex-col items-center">
-        <div className="text-3xl font-extrabold tracking-widest text-[#168df5] mb-4">
+      {/* ================= QRIS ================= */}
+      <div className="relative flex flex-col items-center">
+
+        <div className="text-3xl font-extrabold tracking-widest text-[#168df5]">
           QRIS
         </div>
-        </div>
-        
-      <div className="flex flex-col items-center">
-  <img
-    src="/qris.jpeg"
-    alt="QRIS"
-    onClick={() => setSelectedQRIS("/qris.jpeg")}
-    className="w-32 h-32 object-cover rounded-xl mb-3 cursor-pointer hover:scale-105 transition duration-300"
-  />
-    
 
-        <p className="text-base leading-relaxed text-gray-900">
+        <div className="w-12 h-px bg-yellow-400/50 my-2 mb-5"></div>
 
-        </p>
-          <p className="text-xl font-semibold italic  tracking-wider mt-5">
+        {/* FRAME QRIS */}
+        <motion.div
+          className="
+            p-2
+            rounded-2xl
+            bg-white
+            border-2
+            border-yellow-400
+            shadow-[0_0_25px_rgba(250,204,21,0.25)]
+            cursor-pointer
+          "
+          whileHover={{
+            scale: 1.06,
+          }}
+          transition={{ duration: 0.3 }}
+          onClick={() => setSelectedQRIS("/qris.jpeg")}
+        >
+          <img
+            src="/qris.jpeg"
+            alt="QRIS"
+            className="
+              w-32
+              h-32
+              object-cover
+              rounded-xl
+            "
+          />
+        </motion.div>
+
+        {/* PETUNJUK */}
+        <motion.p
+          className="
+            text-lg
+            font-semibold
+            italic
+            tracking-wide
+            mt-5
+            text-yellow-300
+          "
+          animate={{
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+          }}
+        >
           " Klik dulu baru ss "
+        </motion.p>
+
+        <p className="text-xs text-white/50 mt-2">
+          Klik QRIS untuk memperbesar
         </p>
-        
-{/* Modal QRIS */}
-{selectedQRIS && (
-  <div
-    className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
-    onClick={() => setSelectedQRIS(null)}
-  >
-    <img
-      src={selectedQRIS}
-      alt="QRIS Preview"
-      className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
-      onClick={(e) => e.stopPropagation()}
-    />
 
-    <button
-      type="button"
-      onClick={() => setSelectedQRIS(null)}
-      className="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white text-3xl transition"
+      </div>
+
+      {/* ORNAMEN BAWAH CARD */}
+      <div className="flex items-center justify-center gap-3 mt-8">
+
+        <span className="text-yellow-400/70">
+          ✦
+        </span>
+
+        <div className="w-14 h-px bg-yellow-400/30"></div>
+
+        <span className="text-yellow-400">
+          ♥
+        </span>
+
+        <div className="w-14 h-px bg-yellow-400/30"></div>
+
+        <span className="text-yellow-400/70">
+          ✦
+        </span>
+
+      </div>
+
+    </div>
+
+    {/* KALIMAT PENUTUP */}
+    <motion.p
+      className="mt-7 text-sm text-white/70 italic"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      ×
-    </button>
-    
-  </div>
-)}
+      "Terima kasih atas doa, kasih, dan perhatian yang diberikan kepada kami." 🤍
+    </motion.p>
 
+  </motion.div>
+
+
+  {/* ================= MODAL QRIS ================= */}
+  {selectedQRIS && (
+    <motion.div
+      className="
+        fixed
+        inset-0
+        z-[9999]
+        bg-black/95
+        flex
+        items-center
+        justify-center
+        p-4
+      "
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setSelectedQRIS(null)}
+    >
+
+      <motion.img
+        src={selectedQRIS}
+        alt="QRIS Preview"
+        className="
+          max-w-[90vw]
+          max-h-[90vh]
+          object-contain
+          rounded-xl
+          shadow-2xl
+          border
+          border-yellow-400/50
+        "
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
+        onClick={(e) => e.stopPropagation()}
+      />
+
+      <button
+        type="button"
+        onClick={() => setSelectedQRIS(null)}
+        className="
+          absolute
+          top-5
+          right-5
+          w-12
+          h-12
+          rounded-full
+          bg-white/10
+          hover:bg-yellow-400
+          hover:text-black
+          text-white
+          text-3xl
+          transition
+          border
+          border-white/20
+        "
+      >
+        ×
+      </button>
+
+    </motion.div>
+  )}
+
+</section>
+{/* section 10 Form Ucapan & Daftar Wishes */}
+{/* SECTION 10 - WISH FOR THE COUPLE */}
+<section
+  className="relative text-white px-6 py-16 md:px-20 bg-cover bg-center bg-fixed overflow-hidden"
+  style={{ backgroundImage: "url('/love2.jpg')" }}
+>
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-black/70"></div>
+
+  {/* ORNAMEN ATAS */}
+  <div className="absolute top-8 left-1/2 -translate-x-1/2 text-yellow-300/80 text-2xl">
+    ♡
+  </div>
+
+  {/* ISI */}
+  <motion.div
+    className="relative z-10 max-w-2xl mx-auto"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: false }}
+  >
+
+    {/* JUDUL */}
+    <div className="text-center mb-8">
+
+      <div className="flex items-center justify-center gap-3 mb-3">
+        <span className="w-16 h-px bg-yellow-300/70"></span>
+        <span className="text-yellow-300 text-lg">♥</span>
+        <span className="w-16 h-px bg-yellow-300/70"></span>
+      </div>
+
+      <h3 className="text-2xl md:text-3xl font-bold tracking-wide">
+        Wish For The Couple
+      </h3>
+
+      <p className="text-sm text-white/70 mt-2 italic">
+        Tinggalkan ucapan dan doa terbaik untuk kami
+      </p>
+
+      <div className="flex items-center justify-center gap-3 mt-3">
+        <span className="w-10 h-px bg-yellow-300/50"></span>
+        <span className="text-yellow-300/80">♡</span>
+        <span className="w-10 h-px bg-yellow-300/50"></span>
       </div>
     </div>
-  </motion.div>
-</section>
 
-{/* section 10 Form Ucapan & Daftar Wishes */}
-<section className="bg-black px-6 py-10 text-white text-center">
-   <h3 className="text-2xl font-bold mb-6">Wish For The Couple </h3>
-  <form
-    onSubmit={(e) => {
-      e.preventDefault();
-      if (!guestName || !wishInput.trim()) return;
-      handleSubmitWish(); // Fungsi kirim ke Supabase
-    }}
-    className="flex flex-col gap-4 max-w-xl mx-auto"
-  >
-    <input
-      type="text"
-      placeholder="Nama kamu"
-      className="px-4 py-3 rounded bg-gray-800 border border-gray-700 text-white placeholder-gray-400"
-      value={guestName}
-      onChange={(e) => setGuestName(e.target.value)}
-      required
-    />
-    <textarea
-      placeholder="Ucapan atau doa kamu..."
-      className="px-4 py-3 rounded bg-gray-800 border border-gray-700 text-white placeholder-gray-400"
-      rows={4}
-      value={wishInput}
-      onChange={(e) => setWishInput(e.target.value)}
-      required
-    />
-    <button
-      type="submit"
-      className="bg-red-600 hover:bg-red-700 px-5 py-3 rounded text-white font-semibold shadow"
-    >
-      Kirim Ucapan
-    </button>
-  </form> 
+    {/* FORM CARD */}
+    <div className="bg-black/45 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-7 shadow-2xl">
 
- {/* Recent Wishes */}
-<div className="mt-10 max-w-2xl mx-auto">
-  <div className="max-h-96 overflow-y-scroll pr-2 space-y-4">
-    {wishes.map((wish, i) => (
-      <div
-        key={wish.id || `wish-${i}`}
-        className="bg-gray-800 px-4 py-3 rounded-lg border border-gray-700"
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!guestName || !wishInput.trim()) return;
+          handleSubmitWish();
+        }}
+        className="flex flex-col gap-4"
       >
-        <p className="text-sm text-gray-300">
-          Dari: <span className="font-semibold text-white">{wish.name}</span>
-        </p>
 
-        <p className="mt-1 text-base text-white italic">
-          “{wish.message}”
-        </p>
+        {/* NAMA */}
+        <input
+          type="text"
+          placeholder="Nama kamu"
+          className="px-4 py-3 rounded-xl bg-gray-900/80 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-300 focus:ring-1 focus:ring-yellow-300 transition"
+          value={guestName}
+          onChange={(e) => setGuestName(e.target.value)}
+          required
+        />
+
+        {/* UCAPAN */}
+        <textarea
+          placeholder="Ucapan atau doa kamu..."
+          className="px-4 py-3 rounded-xl bg-gray-900/80 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-300 focus:ring-1 focus:ring-yellow-300 transition resize-none"
+          rows={4}
+          value={wishInput}
+          onChange={(e) => setWishInput(e.target.value)}
+          required
+        />
+
+        {/* BUTTON */}
+        <motion.button
+          type="submit"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.97 }}
+          className="bg-red-600 hover:bg-red-700 px-5 py-3 rounded-xl text-white font-semibold shadow-lg transition"
+        >
+          💌 Kirim Ucapan
+        </motion.button>
+      </form>
+
+      {/* GARIS */}
+      <div className="flex items-center gap-3 my-7">
+        <span className="h-px bg-white/20 flex-1"></span>
+        <span className="text-yellow-300 text-lg">♥</span>
+        <span className="h-px bg-white/20 flex-1"></span>
       </div>
-    ))}
-  </div>
-</div>
 
+      {/* RECENT WISHES */}
+      <div>
+        <h4 className="text-center text-lg font-semibold mb-5">
+          Ucapan & Doa 💐
+        </h4>
+
+        <div className="max-h-96 overflow-y-auto pr-2 space-y-4">
+
+          {wishes.map((wish, i) => (
+            <motion.div
+              key={wish.id || `wish-${i}`}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: false }}
+              className="relative bg-gray-900/75 backdrop-blur-sm px-5 py-4 rounded-xl border border-white/10 shadow-lg"
+            >
+
+              {/* Hiasan hati kecil */}
+              <span className="absolute top-3 right-4 text-yellow-300/60 text-sm">
+                ♥
+              </span>
+
+              <p className="text-sm text-gray-300">
+                Dari:{" "}
+                <span className="font-semibold text-white">
+                  {wish.name}
+                </span>
+              </p>
+
+              <p className="mt-2 text-base text-white/90 italic leading-relaxed">
+                “{wish.message}”
+              </p>
+
+            </motion.div>
+          ))}
+
+        </div>
+      </div>
+    </div>
+
+    {/* KATA PENUTUP */}
+    <motion.div
+      className="text-center mt-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
+    >
+      <div className="flex items-center justify-center gap-3">
+        <span className="w-12 h-px bg-yellow-300/50"></span>
+        <span className="text-yellow-300 text-xl">♡</span>
+        <span className="w-12 h-px bg-yellow-300/50"></span>
+      </div>
+
+      <p className="mt-3 text-sm text-white/70 italic">
+        Terima kasih atas doa dan ucapan terbaiknya 🤍
+      </p>
+    </motion.div>
+
+  </motion.div>
 </section>
 
 {/* section 11 penutup */}
 <section
   className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
              bg-scroll md:bg-fixed"
-  style={{ backgroundImage: "url('/rifback.jpg')" }} // ganti dengan file final
+  style={{ backgroundImage: "url('/love2.jpg')" }} // ganti dengan file final
 >
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/70 z-0" />
@@ -1250,7 +2034,7 @@ useEffect(() => {
       Dengan penuh rasa syukur, kami menantikan kehadiranmu di hari yang sangat berarti ini.
     </p>
     <p className="mt-6 italic text-xs text-white/60">
-      “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu…” <br />
+      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berfikir.” <br />
       – (Q.S. Ar-Rum: 21)
     </p>
   </motion.div>
