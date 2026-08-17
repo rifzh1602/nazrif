@@ -329,7 +329,7 @@ useEffect(() => {
     <div
       className="absolute inset-0 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/ep1.jpg')",
+        backgroundImage: "url('/ep1.webp')",
       }}
     />
 
@@ -431,7 +431,7 @@ useEffect(() => {
 )}
   {/* Gambar sebagai latar belakang fullscreen */}
   <img
-    src="/aw.jpeg" // ← ganti dengan gambar kamu
+    src="/aw.webp" // ← ganti dengan gambar kamu
     alt="Poster Prewed"
     className="absolute inset-0 w-full h-full object-cover object-top z-"
   />
@@ -501,7 +501,7 @@ useEffect(() => {
   {/* Background Parallax */}
   <div
     className="absolute inset-0 bg-fixed bg-center bg-cover z-0"
-    style={{ backgroundImage: "url('/awe2.jpg')" }}
+    style={{ backgroundImage: "url('/awe2.webp')" }}
   >
     <div className="w-full h-full bg-black/80"></div> {/* Overlay */}
   </div>
@@ -522,7 +522,7 @@ useEffect(() => {
       transition={{ duration: 1, delay: 0.2 }}
     >
       <img
-        src="/awe2.jpg"
+        src="/awe2.webp"
         alt="Poster"
         className="w-full h-auto object-cover ease-in-out duration-300 hover:scale-105 rounded-lg shadow-lg"
       />
@@ -583,7 +583,7 @@ useEffect(() => {
       transition={{ duration: 0.8 }}
     >
       <img
-        src="/rifbreaking.jpg"
+        src="/rifbreaking.webp"
         alt="Pengumuman"
         className="w-full h-full object-cover object-[center_83%] rounded-xl ease-in-out duration-300 hover:scale-105"
       />
@@ -613,8 +613,9 @@ useEffect(() => {
 
 {/* SECTION 4 - BRIDE AND GROOM */}
 <section
-  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center overflow-hidden"
-  style={{ backgroundImage: "url('/backbre.jpg')" }}
+  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
+             bg-scroll md:bg-fixed"
+  style={{ backgroundImage: "url('/backbre.webp')" }}
 >
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/55"></div>
@@ -658,7 +659,7 @@ useEffect(() => {
 
         {/* FOTO */}
         <img
-          src="/nazah.jpg"
+          src="/nazah.webp"
           alt="Nazah Auliana"
           className="
             w-36 h-48
@@ -734,7 +735,7 @@ useEffect(() => {
 
         {/* FOTO */}
         <img
-          src="/arif.jpg"
+          src="/arif.webp"
           alt="Arif Hidayat"
           className="
             w-36 h-48
@@ -805,8 +806,9 @@ useEffect(() => {
 
 {/* SECTION 5 */}
 <section
-  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed"
-  style={{ backgroundImage: "url('/backlokasi.jpg')" }}
+  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
+             bg-scroll md:bg-fixed"
+  style={{ backgroundImage: "url('/backlokasi.webp')" }}
 >
   {/* OVERLAY FOTO */}
   <div className="absolute inset-0 bg-black/65"></div>
@@ -1026,8 +1028,9 @@ useEffect(() => {
 
 {/* SECTION 6 - LOVE STORY */}
 <section
-  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed"
-  style={{ backgroundImage: "url('/love2.jpg')" }}
+  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
+             bg-scroll md:bg-fixed"
+  style={{ backgroundImage: "url('/love2.webp')" }}
 >
 
   {/* OVERLAY */}
@@ -1074,25 +1077,25 @@ useEffect(() => {
       {[
         {
           title: "Masa-masa",
-          image: "/love1.jpg",
+          image: "/love1.webp",
           description:
             "Di antara kesibukan dan waktu yang terbatas, tanpa disadari tumbuh rasa yang membawa kami semakin dekat satu sama lain.",
         },
         {
           title: "Keseriusan",
-          image: "/love2.jpg",
+          image: "/love2.webp",
           description:
             "Dalam waktu yang singkat, hubungan ini mulai dijalani dengan tulus, penuh keyakinan, dan disertai komitmen untuk saling menjaga serta melangkah bersama.",
         },
         {
           title: "Restu Keluarga",
-          image: "/love3.jpg",
+          image: "/love3.webp",
           description:
             "Ketika hati telah menemukan keyakinannya, kami memilih melangkah dengan penuh ketulusan, memohon izin dan doa restu kedua orangtua untuk menyatukan dua hati dalam ikatan yang kami harapkan menjadi selamanya.",
         },
         {
           title: "The End of Beginning",
-          image: "/love4.jpg",
+          image: "/love4.webp",
           description:
             "Pada akhirnya, kapal yang kami nahkodai mulai berlayar menuju tujuan yang sama. Dengan niat yang tulus, langkah ini pun terlaksana dalam balutan dukungan, doa, dan restu dari orang-orang tercinta. Semoga perjalanan ini menjadi awal dari kisah panjang yang kami jalani bersama, selamanya. 🤍",
         },
@@ -1233,8 +1236,9 @@ useEffect(() => {
 
 {/* SECTION 7 - MOMENT FAVORIT */}
 <section
-  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed overflow-hidden"
-  style={{ backgroundImage: "url('/love2.jpg')" }}
+  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
+             bg-scroll md:bg-fixed"
+  style={{ backgroundImage: "url('/love2.webp')" }}
 >
   {/* OVERLAY BACKGROUND */}
   <div className="absolute inset-0 bg-black/65"></div>
@@ -1279,12 +1283,12 @@ useEffect(() => {
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
 
       {[
-        { img: "/pre1.jpg" },
-        { img: "/pre2.jpg" },
-        { img: "/pre3.jpg" },
-        { img: "/pre4.jpg" },
-        { img: "/pre5.jpg" },
-        { img: "/pre6.jpg" },
+        { img: "/pre1.webp" },
+        { img: "/pre2.webp" },
+        { img: "/pre3.webp" },
+        { img: "/pre4.webp" },
+        { img: "/pre5.webp" },
+        { img: "/pre6.webp" },
       ].map((item, idx) => (
 
         <motion.div
@@ -1486,8 +1490,9 @@ useEffect(() => {
 
 {/* SECTION 9 - WEDDING GIFT */}
 <section
-  className="relative text-white py-16 px-6 md:px-20 bg-cover bg-center bg-fixed overflow-hidden"
-  style={{ backgroundImage: "url('/love2.jpg')" }}
+  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
+             bg-scroll md:bg-fixed"
+  style={{ backgroundImage: "url('/love2.webp')" }}
 >
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-black/70"></div>
@@ -1851,11 +1856,11 @@ useEffect(() => {
   )}
 
 </section>
-{/* section 10 Form Ucapan & Daftar Wishes */}
 {/* SECTION 10 - WISH FOR THE COUPLE */}
 <section
-  className="relative text-white px-6 py-16 md:px-20 bg-cover bg-center bg-fixed overflow-hidden"
-  style={{ backgroundImage: "url('/love2.jpg')" }}
+  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
+             bg-scroll md:bg-fixed"
+  style={{ backgroundImage: "url('/love2.webp')" }}
 >
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-black/70"></div>
@@ -2015,7 +2020,7 @@ useEffect(() => {
 <section
   className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
              bg-scroll md:bg-fixed"
-  style={{ backgroundImage: "url('/love2.jpg')" }} // ganti dengan file final
+  style={{ backgroundImage: "url('/love2.webp')" }} // ganti dengan file final
 >
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/70 z-0" />
