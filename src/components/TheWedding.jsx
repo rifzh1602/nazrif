@@ -338,7 +338,7 @@ useEffect(() => {
     <div
       className="absolute inset-0 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/ep1.webp')",
+        backgroundImage: "url('/awal.jpeg')",
       }}
     />
 
@@ -452,29 +452,24 @@ useEffect(() => {
   <div className="relative z-20 flex flex-col items-start justify-end h-full px-6 md:px-20 pb-16 text-left text-white">
 
  {/* NIKAHFIX - SVG curved */}
- <div className="-mb-2 lg:-mb-2 md:ml-0 lg:-ml-8">
-  <svg viewBox="0 0 400 51" className="w-40 h-20 md:w-56 md:h-20 lg:w-64 lg:h-28">
-    <defs>
-      <path id="curve" d="M20,90 Q200,0 400,80" fill="transparent" />
-        {/* Filter untuk bayangan */}
-      <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="black" floodOpacity="0.4"/>
-      </filter>
-    </defs>
-    <text
-      fontSize="140"
-      className="fill-red-600 font-black tracking-wide font-bebas"
-    >
-      <textPath href="#curve" startOffset="48%" textAnchor="middle">
-        RifNaz
-      </textPath>
-    </text>
-  </svg>
-</div>
 
-    <h1 className="text-3xl md:text-5xl font-extrabold leading-tigh lg:-ml-8">
-      Arif & Nazah: <br /> Sebelum Hari H
-    </h1>
+
+    <h1
+  className="
+    text-5xl
+    md:text-7xl
+    font-normal
+    tracking-wide
+    leading-none
+    text-white
+  "
+  style={{
+    fontFamily: "'Bodoni Moda', serif",
+  }}
+>
+  Arif & Nazah
+</h1>
+
 
     <div className="flex items-center gap-3 mt-3 lg:-ml-8">
       <span className="bg-red-600 text-white text-xs md:text-sm px-3 py-1 rounded-full font-semibold shadow">
@@ -2396,9 +2391,12 @@ useEffect(() => {
       Terima kasih telah menjadi bagian dari cerita cinta kami. <br />
       Dengan penuh rasa syukur, kami menantikan kehadiranmu di hari yang sangat berarti ini.
     </p>
-    <p className="mt-6 italic text-xs text-white/60">
+    <p className="mt-6 italic text-xs  text-white/60">
       “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berfikir.” <br />
       – (Q.S. Ar-Rum: 21)
+    </p>
+     <p className="mt-3 text-sm md:text-base text-white/90 leading-relaxed ">
+      CREATED BY RIF
     </p>
   </motion.div>
 </section>
@@ -2434,14 +2432,31 @@ useEffect(() => {
                 }}
               />
             ))}
-            <motion.h1
-              className="text-8xl lg:text-8xl font-bold text-red-600 z-10 font-bebas"
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.5 }}
-            >
-              NIKFLIX
-            </motion.h1>
+         <motion.h1
+  className="
+    text-4xl
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    font-bold
+    text-red-600
+    z-10
+    font-bebas
+    text-center
+    w-full
+    px-2
+    leading-none
+  "
+  initial={{ scale: 0.5, opacity: 0.4 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1.5 }}
+>
+  Arif & Nazah <br></br>
+<span className="block mt-1 text-[8px] font-serif text-white">
+  Created by rif
+</span>
+
+</motion.h1>
             <audio
               ref={audioRefIntro}
               src="/sound/netflix_sound.mp3"
