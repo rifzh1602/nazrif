@@ -1236,26 +1236,40 @@ useEffect(() => {
 
 {/* SECTION 7 - MOMENT FAVORIT */}
 <section
-  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
-             bg-scroll md:bg-fixed"
+  className="
+    relative
+    w-full
+    text-white
+    py-20
+    px-6
+    md:px-20
+    bg-center
+    bg-cover
+    overflow-hidden
+    bg-scroll
+    md:bg-fixed
+  "
   style={{ backgroundImage: "url('/love2.webp')" }}
 >
   {/* OVERLAY BACKGROUND */}
   <div className="absolute inset-0 bg-black/65"></div>
 
-  {/* ORNAMEN CAHAYA */}
-  <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+  {/* ORNAMEN CAHAYA
+      Dibuat hanya di desktop supaya HP lebih ringan */}
+  <div className="hidden md:block absolute top-10 left-10 w-32 h-32 bg-yellow-400/10 rounded-full blur-3xl"></div>
+
+  <div className="hidden md:block absolute bottom-10 right-10 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+
 
   <motion.div
     className="relative z-10 max-w-6xl mx-auto"
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-    viewport={{ once: false }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
   >
 
-    {/* JUDUL */}
+    {/* ================= JUDUL ================= */}
     <div className="text-center mb-10">
 
       <h3 className="text-2xl md:text-3xl font-bold">
@@ -1264,13 +1278,13 @@ useEffect(() => {
 
       {/* GARIS LOVE */}
       <div className="flex items-center justify-center gap-3 mt-4">
-        <div className="w-16 md:w-24 h-[1px] bg-yellow-400/70"></div>
+        <div className="w-16 md:w-24 h-px bg-yellow-400/70"></div>
 
-        <span className="text-yellow-400 text-lg animate-pulse">
+        <span className="text-yellow-400 text-lg">
           ♥
         </span>
 
-        <div className="w-16 md:w-24 h-[1px] bg-yellow-400/70"></div>
+        <div className="w-16 md:w-24 h-px bg-yellow-400/70"></div>
       </div>
 
       <p className="text-xs md:text-sm text-white/70 mt-4 italic">
@@ -1279,7 +1293,8 @@ useEffect(() => {
 
     </div>
 
-    {/* GRID FOTO */}
+
+    {/* ================= GRID FOTO ================= */}
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
 
       {[
@@ -1293,38 +1308,48 @@ useEffect(() => {
 
         <motion.div
           key={idx}
+
           className="
             relative
             rounded-xl
             overflow-hidden
-            shadow-2xl
+            shadow-xl
             group
             cursor-pointer
             border
             border-white/20
-            bg-black/30
-            backdrop-blur-sm
+            bg-black/20
           "
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
           transition={{
-            delay: idx * 0.08,
-            duration: 0.6,
+            delay: idx * 0.05,
+            duration: 0.35,
           }}
-          viewport={{ once: false }}
 
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+
+          /*
+            HAPUS 3D ROTATE
+            Supaya HP lebih ringan
+          */
           whileHover={{
-            scale: 1.04,
-            rotateX: -3,
-            rotateY: 5,
+            scale: 1.02,
             transition: {
-              duration: 0.35,
-              ease: "easeOut",
+              duration: 0.2,
             },
-          }}
-
-          style={{
-            transformStyle: "preserve-3d",
           }}
 
           onClick={() => setSelectedImage(item.img)}
@@ -1334,15 +1359,19 @@ useEffect(() => {
           <img
             src={item.img}
             alt={`Moment ${idx + 1}`}
+            loading="lazy"
+            decoding="async"
             className="
+              block
               w-full
               aspect-[3/4]
               object-cover
-              transition-all
-              duration-500
-              group-hover:scale-110
+              transition-transform
+              duration-300
+              group-hover:scale-105
             "
           />
+
 
           {/* OVERLAY */}
           <div
@@ -1350,19 +1379,16 @@ useEffect(() => {
               absolute
               inset-0
               bg-gradient-to-t
-              from-black/70
+              from-black/60
               via-transparent
               to-transparent
-              opacity-70
-              group-hover:opacity-100
-              transition
+              pointer-events-none
             "
           ></div>
 
-  
 
           {/* LOVE */}
-          <motion.div
+          <div
             className="
               absolute
               top-2
@@ -1371,55 +1397,55 @@ useEffect(() => {
               text-lg
               drop-shadow-lg
             "
-            animate={{
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.5,
-            }}
           >
             ♥
-          </motion.div>
+          </div>
 
         </motion.div>
+
       ))}
+
     </div>
 
-    {/* KETERANGAN BAWAH */}
+
+    {/* ================= KETERANGAN ================= */}
     <motion.div
       className="text-center mt-10"
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: false }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
 
       <div className="flex items-center justify-center gap-3 mb-4">
-        <span className="text-yellow-400">✦</span>
 
-        <div className="w-20 h-[1px] bg-yellow-400/50"></div>
+        <span className="text-yellow-400">
+          ✦
+        </span>
+
+        <div className="w-20 h-px bg-yellow-400/50"></div>
 
         <span className="text-yellow-400 text-xl">
           ♡
         </span>
 
-        <div className="w-20 h-[1px] bg-yellow-400/50"></div>
+        <div className="w-20 h-px bg-yellow-400/50"></div>
 
-        <span className="text-yellow-400">✦</span>
+        <span className="text-yellow-400">
+          ✦
+        </span>
+
       </div>
 
       <p className="text-xs md:text-sm text-white/70 italic">
-       Setiap cerita menyimpan rasa, dan setiap momen menjadi bagian dari perjalanan cinta kita. 🤍
+        Setiap cerita menyimpan rasa, dan setiap momen menjadi bagian
+        dari perjalanan cinta kita. 🤍
       </p>
 
     </motion.div>
 
 
-    {/* ============================= */}
-    {/* MODAL FOTO */}
-    {/* ============================= */}
-
+    {/* ================= MODAL FOTO ================= */}
     {selectedImage && (
       <motion.div
         className="
@@ -1432,9 +1458,15 @@ useEffect(() => {
           justify-center
           p-4
         "
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+
+        initial={{
+          opacity: 0,
+        }}
+
+        animate={{
+          opacity: 1,
+        }}
+
         onClick={() => setSelectedImage(null)}
       >
 
@@ -1442,6 +1474,7 @@ useEffect(() => {
         <motion.img
           src={selectedImage}
           alt="Preview Moment"
+
           className="
             max-w-full
             max-h-[90vh]
@@ -1451,14 +1484,26 @@ useEffect(() => {
             border
             border-white/20
           "
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.3 }}
+
+          initial={{
+            scale: 0.9,
+          }}
+
+          animate={{
+            scale: 1,
+          }}
+
+          transition={{
+            duration: 0.2,
+          }}
+
           onClick={(e) => e.stopPropagation()}
         />
 
+
         {/* TOMBOL CLOSE */}
         <button
+          type="button"
           onClick={() => setSelectedImage(null)}
           className="
             absolute
@@ -1468,7 +1513,6 @@ useEffect(() => {
             h-11
             rounded-full
             bg-black/60
-            backdrop-blur-md
             border
             border-white/30
             text-white
@@ -1486,7 +1530,6 @@ useEffect(() => {
 
   </motion.div>
 </section>
-
 
 {/* SECTION 9 - WEDDING GIFT */}
 <section
