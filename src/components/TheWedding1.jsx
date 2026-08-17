@@ -510,7 +510,7 @@ useEffect(() => {
   {/* Background Parallax */}
 <div
   className="absolute inset-0 bg-scroll md:bg-fixed bg-center bg-cover z-0"
-  style={{ backgroundImage: "url('/awe2.webp')" }}
+  style={{ backgroundImage: "url('/awe21.webp')" }}
 >
     <div className="w-full h-full bg-black/80"></div> {/* Overlay */}
   </div>
@@ -588,7 +588,7 @@ useEffect(() => {
     md:bg-fixed
   "
   style={{
-    backgroundImage: "url('/love2.webp')",
+    backgroundImage: "url('/love21.webp')",
   }}
 >
   {/* OVERLAY BACKGROUND */}
@@ -797,197 +797,6 @@ useEffect(() => {
 </section>
 
 {/* SECTION 4 - BRIDE AND GROOM */}
-<section
-  className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
-             bg-scroll md:bg-fixed"
-  style={{ backgroundImage: "url('/backbre.webp')" }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/55"></div>
-
-  <motion.div
-    className="relative z-10 max-w-5xl mx-auto"
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-    viewport={{ once: true, amount: 0.15 }}
-  >
-
-    {/* ================= TITLE ================= */}
-    <h3 className="text-3xl md:text-5xl font-serif font-bold text-center">
-      Bride and Groom 💐
-    </h3>
-
-    {/* GARIS LOVE DI BAWAH JUDUL */}
-    <div className="flex items-center justify-center gap-3 mt-4 mb-10">
-      <div className="h-px w-24 md:w-36 bg-[#f6d58a]/80"></div>
-
-      <span className="text-[#f6d58a] text-lg">
-        ❧ ♥ ❧
-      </span>
-
-      <div className="h-px w-24 md:w-36 bg-[#f6d58a]/80"></div>
-    </div>
-
-
-    {/* ================= BRIDE & GROOM ================= */}
-    <div className="grid grid-cols-2 gap-6 md:gap-10">
-
-      {/* ================= BRIDE ================= */}
-      <motion.div
-        className="flex flex-col items-center text-center"
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.1 }}
-        viewport={{ once: true, amount: 0.15 }}
-      >
-
-        {/* FOTO */}
-        <img
-          src="/nazah.webp"
-          alt="Nazah Auliana"
-          className="
-            w-36 h-48
-            md:w-48 md:h-64
-            object-cover
-            rounded-xl
-            shadow-2xl
-            border border-white/60
-          "
-        />
-
-        {/* NAMA */}
-        <motion.h4
-          className="
-            text-xl md:text-3xl
-            font-serif
-            font-semibold
-            mt-5
-          "
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          viewport={{ once: true, amount: 0.15 }}
-        >
-          Nazah Auliana
-        </motion.h4>
-
-        {/* GARIS LOVE */}
-        <div className="flex items-center justify-center gap-2 mt-3 mb-4">
-          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
-
-          <span className="text-[#f6d58a] text-sm">
-            ❧ ♥ ❧
-          </span>
-
-          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
-        </div>
-
-        {/* ORANG TUA */}
-        <motion.p
-          className="
-            text-xs md:text-base
-            text-white/90
-            max-w-xs
-            leading-relaxed
-          "
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          viewport={{ once: true, amount: 0.15 }}
-        >
-          Putri dari{" "}
-          <span className="font-bold">
-            Bapak Nana Rohayana
-          </span>{" "}
-          &{" "}
-          <span className="font-bold">
-            Ibu Siti Khodijah
-          </span>
-        </motion.p>
-
-      </motion.div>
-
-
-      {/* ================= GROOM ================= */}
-      <motion.div
-        className="flex flex-col items-center text-center"
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true, amount: 0.15 }}
-      >
-
-        {/* FOTO */}
-        <img
-          src="/arif.webp"
-          alt="Arif Hidayat"
-          className="
-            w-36 h-48
-            md:w-48 md:h-64
-            object-cover
-            rounded-xl
-            shadow-2xl
-            border border-white/60
-          "
-        />
-
-        {/* NAMA */}
-        <motion.h4
-          className="
-            text-xl md:text-3xl
-            font-serif
-            font-semibold
-            mt-5
-          "
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          viewport={{ once: true, amount: 0.15 }}
-        >
-          Arif Hidayat
-        </motion.h4>
-
-        {/* GARIS LOVE */}
-        <div className="flex items-center justify-center gap-2 mt-3 mb-4">
-          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
-
-          <span className="text-[#f6d58a] text-sm">
-            ❧ ♥ ❧
-          </span>
-
-          <div className="h-px w-12 md:w-20 bg-[#f6d58a]/80"></div>
-        </div>
-
-        {/* ORANG TUA */}
-        <motion.p
-          className="
-            text-xs md:text-base
-            text-white/90
-            max-w-xs
-            leading-relaxed
-          "
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          viewport={{ once: true, amount: 0.15 }}
-        >
-          Putra dari{" "}
-          <span className="font-bold">
-            Bapak Gunara
-          </span>{" "}
-          &{" "}
-          <span className="font-bold">
-            Ibu Nenden
-          </span>
-        </motion.p>
-
-      </motion.div>
-
-    </div>
-
-  </motion.div>
-</section>
 
 {/* SECTION 5 */}
 <section
@@ -1005,7 +814,7 @@ useEffect(() => {
     md:bg-fixed
   "
   style={{
-    backgroundImage: "url('/backlokasi.webp')",
+    backgroundImage: "url('/backlokasi1.webp')",
   }}
 >
   {/* OVERLAY FOTO */}
@@ -1298,7 +1107,7 @@ useEffect(() => {
     md:bg-fixed
   "
   style={{
-    backgroundImage: "url('/love2.webp')",
+    backgroundImage: "url('/love2.webp1')",
   }}
 >
   {/* OVERLAY */}
@@ -1596,7 +1405,7 @@ useEffect(() => {
     md:bg-fixed
   "
   style={{
-    backgroundImage: "url('/love2.webp')",
+    backgroundImage: "url('/love2.webp1')",
   }}
 >
   {/* OVERLAY BACKGROUND */}
@@ -1849,7 +1658,7 @@ useEffect(() => {
 <section
   className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
              bg-scroll md:bg-fixed"
-  style={{ backgroundImage: "url('/love2.webp')" }}
+  style={{ backgroundImage: "url('/love21.webp')" }}
 >
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-black/70"></div>
@@ -2218,7 +2027,7 @@ useEffect(() => {
 <section
   className="relative w-full text-white py-20 px-6 md:px-20 bg-center bg-cover overflow-hidden
              bg-scroll md:bg-fixed"
-  style={{ backgroundImage: "url('/love2.webp')" }}
+  style={{ backgroundImage: "url('/love21.webp')" }}
 >
   {/* OVERLAY */}
   <div className="absolute inset-0 bg-black/70"></div>
